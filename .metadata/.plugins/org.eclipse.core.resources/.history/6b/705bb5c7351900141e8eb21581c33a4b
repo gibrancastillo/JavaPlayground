@@ -1,0 +1,67 @@
+package com.ccc.playground;
+
+public class MaximumArrayValue {
+	
+	public static void main(String[] args) {
+		
+	}
+	
+	/*
+	 * Returns the largest value in an array of non-negative integers
+	 */
+	int CompareToMax(int array[], int n) {
+		int curMax, i;
+		
+		// Make sure that there is at least one element in the array.
+		if(n <= 0) {
+			return -1;
+		}
+		
+		// Set the largest number so far to the first array value.
+		curMax = array[0];
+		
+		System.out.println("So far the first array value for curMax: " + curMax);
+		System.out.println("**********************************");
+		
+		// Compare every number with the largest number so far.
+		for(i = 1; i < n; i++) {
+			if(array[i] > curMax) {
+				curMax = array[i];
+				System.out.println(curMax);
+			}
+		}
+		
+		System.out.println("**********************************");
+		
+		return curMax;
+	}
+	
+	int CompareToAll(int array[], int n) {
+		int i, j;
+		boolean isMax;
+		
+		// Make sure that there is at least one element in the array.
+		if(n <= 0) {
+			return -1;
+		}
+		
+		for(i = n - 1; i > 0; i--) {
+			isMax = true;
+			
+			for(j = 0; j < n; j++) {
+				// See if any value is greater.
+				if(array[j] > array[i]) {
+					isMax = false;  // current array[i] is not the largest value.
+					break;
+				}
+			}
+			
+			// If isMax is true, no larger value exists; current array[i] is max.
+			if(isMax) {
+				break;
+			}
+		}
+		
+		return array[i];
+	}
+}
