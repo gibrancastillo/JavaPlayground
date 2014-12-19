@@ -70,7 +70,7 @@ public class MaximumArrayValue {
 		/*
 		 *  How many operations [comparing array value to another value] were performed for each n - n examination or O(n)
 		 *  Linear time:  The time required to run the algorithm increases linearly with the number of input items.
-		 *  Big-O is concern with the asymptotic running time: the limit of the running time as n gets very larage
+		 *  Big-O is concern with the asymptotic running time: the limit of the running time as n gets very large.
 		 */
 		System.out.println("O(n) - numOpsPerN: " + numOpsPerN);
 		System.out.println("**********************************");
@@ -124,7 +124,7 @@ public class MaximumArrayValue {
 		/*
 		 *  How many operations [comparing array value to another value] were performed for each n - n examination or O(n)
 		 *  Linear time:  The time required to run the algorithm increases linearly with the number of input items.
-		 *  Big-O is concern with the asymptotic running time: the limit of the running time as n gets very larage
+		 *  Big-O is concern with the asymptotic running time: the limit of the running time as n gets very large.
 		 */
 		System.out.println("O(n) - numOpsPerN: " + numOpsPerN);
 		System.out.println("**********************************");
