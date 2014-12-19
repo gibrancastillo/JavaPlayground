@@ -11,8 +11,7 @@ import java.util.Random;
  * Example:  Unicode string, which enables more compact representations of strings while making it more expensive to
  * perform many common string operations.
  * 
- * 
- * @author gibranecastillo
+ * @author Gibran E. Castillo
  *
  */
 public class MaximumArrayValue {
@@ -79,6 +78,12 @@ public class MaximumArrayValue {
 		return curMax;
 	}
 	
+	/**
+	 * 
+	 * @param array
+	 * @param n
+	 * @return
+	 */
 	int compareToAll(int array[], int n) {
 		System.out.println("compareToAll()");
 		

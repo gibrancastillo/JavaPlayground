@@ -1,0 +1,50 @@
+package com.ccc.playground;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+/**
+ * Write a method to decide if two strings are anagrams or not.
+ * 
+ * @author gecasti
+ *
+ */
+public class StringsAnagramAlgorithm {
+	
+	public static boolean isAnagramSort(String wordStr, String wordPlayStr) {
+		if(wordStr.length() != wordPlayStr.length()) {
+			return false;
+		}
+		
+		char[] wordChar = wordStr.toCharArray();
+		Arrays.sort(wordChar);
+		String sortedWordStr = new String(wordChar);
+		
+		char[] wordPlayChar = wordPlayStr.toCharArray();
+		Arrays.sort(wordPlayChar);
+		String sortedWordPlayStr = new String(wordPlayChar);
+		
+		return sortedWordStr == sortedWordPlayStr;
+	}
+	
+	public static boolean isAnagram(String s, String t) {
+		if(s.length() != t.length()) {
+			return false;
+		}
+		
+		int[] letters = new int[256];
+		
+		return false;
+	}
+	
+	public static void main(String[] args) {
+		String[][] wordPairs = {{"apple", "papel"}, {"carrot", "tarroc"}, {"hello", "llloh"}};
+		
+		for(String[] wordPair : wordPairs) {
+			String word = wordPair[0];
+			String wordPlay = wordPair[1];
+			boolean anagram = isAnagram(word, wordPlay);
+			System.out.println(word + ", " + wordPlay + ": " + anagram);
+		}
+	}
+}

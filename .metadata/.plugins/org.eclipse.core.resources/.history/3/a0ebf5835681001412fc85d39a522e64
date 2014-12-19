@@ -1,0 +1,91 @@
+package com.ccc.playground;
+
+/**
+ * Implement an algorithm to determine if a string has all unique characters.
+ * What if you can not use additional data structures?
+ * 
+ * @author gecasti
+ *
+ */
+public class UniqueCharsAlgorithm {
+	
+	/**
+	 * We can reduce our space usage a little bit by using a bit vector. We will assume, in the below code, that
+	 * the string is only lower case ‘a’ through ‘z’.  This will allow us to use just a single int.
+	 * 
+	 * Bit Manipulation
+	 * And (&):    0 & 0 = 0    1 & 0 = 0    0 & 1 = 0    1 & 1 = 1
+	 * Or  (|):    0 | 0 = 0    1 | 0 = 1    0 | 1 = 1    1 | 1 = 1
+	 * Xor (^):    0 ^ 0 = 0    1 ^ 0 = 1    0 ^ 1 = 1    1 ^ 1 = 0
+	 * 
+	 * x << y means x shifted y bits to the left, example:  00011001 << 4 = 10010000
+	 * 
+	 * 
+	 * @param str
+	 * @return
+	 */
+	public static boolean isUniqueCharsBitManipulation(String str) {
+		int checker = 0;
+		
+		System.out.println("str= " + str);
+		
+		for(int i = 0; i < str.length(); ++i) {
+			int val = str.charAt(i) - 'a';
+			
+			System.out.println("str.chartAt(" + i + "): " + str.charAt(i) + " --> val: " + val);
+			System.out.println(checker + " & (1 << " + val + ")= " + (1 << val) + ") --> " + (checker & (1 << val)));
+			
+			if((checker & (1 << val)) > 0) {
+				System.out.print("not a unique chars");
+				
+				return false;
+			}
+			
+			checker |= (1 << val);
+		}
+		
+		return true;
+	}
+	
+	/**
+	 * Create a boolean array of 256 elements with index 0 to 255 with all the values initialize to false.
+	 * 
+	 * @param str
+	 * @return
+	 */
+	public static boolean isUniqueCharsCharSet(String str) {
+		boolean[] char_set = new boolean[256];
+		
+		System.out.println("str= " + str);
+		
+		for(int i = 0; i < str.length(); i++) {
+			int val = str.charAt(i);
+			
+			System.out.println("str.chartAt(" + i + "): " + str.charAt(i));
+			System.out.println("char_set[" + val + "]: " + char_set[val]);
+			
+			if(char_set[val]) {
+				return false;
+			}
+			
+			// The decimal value of this char has already been seen once in the string.
+			char_set[val] = true;
+		}
+		
+		return true;
+	}
+	
+	public static void main(String[] agrs) {
+		String[] words = {"abcde", "hello", "apple", "kite", "padle"};
+		
+		for(String word : words) {
+			//System.out.println(word + ": " + isUniqueCharsBitManipulation(word));
+			System.out.println(word + ": " + isUniqueCharsCharSet(word));
+		}
+		
+		/*for(int i = 0; i < words.length; i++) {
+			String word = words[i];
+			System.out.println(word + ": " + isUniqueChars(word));
+		}*/
+	}
+}

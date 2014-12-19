@@ -1,0 +1,13 @@
+package com.ccc.playground;
+
+/**
+ * Describe how you could use a single array to implement three stacks.
+ * 
+ * 
+ * 
+ * @author gecasti
+ *
+ */
+public class SingleArrayThreeStacks {
+	
+}

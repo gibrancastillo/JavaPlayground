@@ -1,0 +1,82 @@
+package com.ccc.playground;
+
+/**
+ * Given an image represented by an NxN matrix, where each pixel in the image is 4 bytes, write a method to rotate the image by 90 degrees. Can you do this in place?
+ * 
+ * 
+ * @author gecasti
+ *
+ */
+public class ImageRotationAlgorithm {
+	
+	/**
+	 * The rotation can be performed in layers, where you perform a cyclic swap on the edges on each layer.
+	 * In the first for loop, we rotate the first layer (outermost edges).
+	 * We rotate the edges by doing a four-way swap first on the corners, then on the element clockwise from the edges, then on the element three steps away.
+	 * Once the exterior elements are rotated, we then rotate the interior region’s edges.
+	 * 
+	 * @param matrix
+	 * @param n
+	 */
+	public static void rotate(int[][] matrix, int n) {
+		/*
+		 * layer represents the columns in the 2D array matrix
+		 * i represents the rows in the 2D arrary matrix
+		 * int[][] matrix = new int[layer][i];
+		 * ++layer Prefix or Pre-Increment, increment layer by 1 and then assign layer's value.
+		 */
+		for(int layer = 0; layer < n / 2; ++layer) {
+			int first = layer;
+			int last = n - 1 - layer;
+			
+			for(int i = first; i < last; ++i) {
+				int offset = i - first;
+				int top = matrix[first][i];  // save top
+				
+				// left -> top
+				matrix[first][i] = matrix[last - offset][first];
+				
+				// bottom -> left
+				matrix[last - offset][first] = matrix[last][last - offset];
+				
+				// right -> bottom
+				matrix[last][last - offset] = matrix[i][last];
+				
+				// top -> right
+				matrix[i][last] = top; // right <- saved top
+			}
+		}
+	}
+	
+	public static void main(String[] agrs) {
+		int[][] matrix = randomMatrix(10, 10, 0, 9);
+		rotate(matrix, 10);
+	}
+	
+	public static int[][] randomMatrix(int M, int N, int min, int max) {
+		int[][] matrix = new int[M][N];
+		
+		System.out.println("matrix[" + M + "][" + N + "]");
+		
+		for (int cols = 0; cols < M; cols++) {
+			System.out.println("Column " + cols);
+			
+			for (int rows = 0; rows < N; rows++) {
+				matrix[cols][rows] = randomIntInRange(min, max);
+				System.out.println(cols + ", " + rows + " = " + matrix[cols][rows]);
+			}
+			
+			System.out.println();
+		}
+		
+		return matrix;
+	}
+	
+	public static int randomIntInRange(int min, int max) {
+		return randomInt(max + 1 - min) + min;
+	}
+	
+	public static int randomInt(int n) {
+		return (int) (Math.random() * n);
+	}
+}

@@ -1,0 +1,17 @@
+package com.ccc.playground;
+
+public class ReplaceSpacesAlgorithm {
+	
+	
+	public static void main(String[] args) {
+		String str = "abc d e f";
+		char[] charArr = new char[str.length() + 3 * 2 + 1];
+		
+		System.out.println("charArr.length= " + charArr.length);
+		
+		// i++ Postfix or Post-Increment, assign i value and then increment i by 1.
+		for(int i = 0; i < charArr.length; i++) {
+			
+		}
+	}
+}

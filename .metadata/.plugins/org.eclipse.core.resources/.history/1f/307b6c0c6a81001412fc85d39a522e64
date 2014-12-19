@@ -1,0 +1,75 @@
+package com.ccc.playground;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+/**
+ * Write a method to decide if two strings are anagrams or not.
+ * 
+ * @author gecasti
+ *
+ */
+public class StringsAnagramAlgorithm {
+	
+	/**
+	 * Sort the two strings and then compare the values to see if they are equal.  If yes, then both strings are anagrams.
+	 * 
+	 * @param wordStr
+	 * @param wordPlayStr
+	 * @return
+	 */
+	public static boolean isAnagramSort(String wordStr, String wordPlayStr) {
+		if(wordStr.length() != wordPlayStr.length()) {
+			return false;
+		}
+		
+		System.out.println("word:" + wordStr + "  word play [anagram]: " + wordPlayStr);
+		
+		char[] wordChar = wordStr.toCharArray();
+		Arrays.sort(wordChar);
+		String sortedWordStr = new String(wordChar);
+		
+		char[] wordPlayChar = wordPlayStr.toCharArray();
+		Arrays.sort(wordPlayChar);
+		String sortedWordPlayStr = new String(wordPlayChar);
+		
+		System.out.println("Sorted word:" + sortedWordStr + "  sorted word play [anagram]: " + sortedWordPlayStr);
+		
+		/*
+		 * In Java, when the “==” operator is used to compare 2 objects, it checks to see if the objects refer to the same place in memory.
+		 * In other words, it checks to see if the 2 object names are basically references to the same memory location.
+		 * 
+		 * The equals method is defined in the Object class.  By default, the equals() method actually behaves the same as the “==” operator – 
+		 * meaning it checks to see if both objects reference the same place in memory.  The Java String class actually overrides the default equals()
+		 * implementation in the Object class – and it overrides the method so that it checks only the values of the strings, not their locations in memory.
+		 */
+		return sortedWordStr.equals(sortedWordPlayStr);
+	}
+	
+	public static boolean isAnagram(String s, String t) {
+		if(s.length() != t.length()) {
+			return false;
+		}
+		
+		int[] letters = new int[256];
+		
+		// i++ Postfix or Post-Increment, assign i and then increment i by 1.
+		for(int i = 0; i < letters.length; i++) {
+			
+		}
+		
+		return false;
+	}
+	
+	public static void main(String[] args) {
+		String[][] wordPairs = {{"apple", "papel"}, {"carrot", "tarroc"}, {"hello", "llloh"}};
+		
+		for(String[] wordPair : wordPairs) {
+			String word = wordPair[0];
+			String wordPlay = wordPair[1];
+			boolean anagram = isAnagram(word, wordPlay);
+			//boolean anagram = isAnagramSort(word, wordPlay);
+			System.out.println(word + ", " + wordPlay + ": " + anagram);
+		}
+	}
+}
