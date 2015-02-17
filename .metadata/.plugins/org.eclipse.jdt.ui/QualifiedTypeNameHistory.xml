@@ -2,6 +2,23 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="java.util.Random"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="com.ccc.playground.LinkedListNode"/>
+<fullyQualifiedTypeName name="com.ccc.playground.ImageRotationAlgorithm"/>
+<fullyQualifiedTypeName name="javax.swing.RepaintManager"/>
+<fullyQualifiedTypeName name="com.ccc.playground.ReplaceSpacesAlgorithm"/>
+<fullyQualifiedTypeName name="com.ccc.playground.StringsAnagramAlgorithm"/>
+<fullyQualifiedTypeName name="com.ccc.playground.UniqueCharsAlgorithm"/>
+<fullyQualifiedTypeName name="com.ccc.playground.carlist.Subaru"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.ccc.playground.carlist.CarInventory"/>
+<fullyQualifiedTypeName name="java.lang.reflect.Array"/>
 <fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="com.ccc.playground.hashfunc.ModulusHashFunction"/>
+<fullyQualifiedTypeName name="java.lang.Override"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="com.ccc.playground.openhash.WordList"/>
 </qualifiedTypeNameHistroy>

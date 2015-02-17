@@ -372,7 +372,9 @@ public class ImageRotationAlgorithm {
 			
 			for(int i = first; i < last; ++i) {
 				int offset = i - first;
-				int top = matrix[first][i];  // save top
+				
+				// save top
+				int top = matrix[first][i];
 				
 				// left -> top
 				matrix[first][i] = matrix[last - offset][first];
@@ -393,7 +395,8 @@ public class ImageRotationAlgorithm {
 	}
 	
 	/**
-	 * 
+	 * Create and populate the matrix elements with random integer values
+	 *  
 	 * @param M
 	 * @param N
 	 * @param min

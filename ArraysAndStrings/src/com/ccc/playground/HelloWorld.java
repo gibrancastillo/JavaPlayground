@@ -1,0 +1,8 @@
+package com.ccc.playground;
+
+public class HelloWorld {
+
+	public static void main(String[] args) {
+		System.out.print("super Mario");
+	}
+}

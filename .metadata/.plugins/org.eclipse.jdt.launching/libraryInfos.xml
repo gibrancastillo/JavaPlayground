@@ -21,25 +21,6 @@
 <entry path="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/endorsed"/>
 </endorsedDirs>
 </libraryInfo>
-<libraryInfo home="C:\Program Files (x86)\Java\jre7" version="1.7.0_17">
-<bootpath>
-<entry path="C:\Program Files (x86)\Java\jre7\lib\resources.jar"/>
-<entry path="C:\Program Files (x86)\Java\jre7\lib\rt.jar"/>
-<entry path="C:\Program Files (x86)\Java\jre7\lib\sunrsasign.jar"/>
-<entry path="C:\Program Files (x86)\Java\jre7\lib\jsse.jar"/>
-<entry path="C:\Program Files (x86)\Java\jre7\lib\jce.jar"/>
-<entry path="C:\Program Files (x86)\Java\jre7\lib\charsets.jar"/>
-<entry path="C:\Program Files (x86)\Java\jre7\lib\jfr.jar"/>
-<entry path="C:\Program Files (x86)\Java\jre7\classes"/>
-</bootpath>
-<extensionDirs>
-<entry path="C:\Program Files (x86)\Java\jre7\lib\ext"/>
-<entry path="C:\WINDOWS\Sun\Java\lib\ext"/>
-</extensionDirs>
-<endorsedDirs>
-<entry path="C:\Program Files (x86)\Java\jre7\lib\endorsed"/>
-</endorsedDirs>
-</libraryInfo>
 <libraryInfo home="/Library/Java/JavaVirtualMachines/jdk1.7.0_60.jdk/Contents/Home" version="1.7.0_60">
 <bootpath>
 <entry path="/Library/Java/JavaVirtualMachines/jdk1.7.0_60.jdk/Contents/Home/jre/lib/resources.jar"/>
@@ -61,6 +42,25 @@
 </extensionDirs>
 <endorsedDirs>
 <entry path="/Library/Java/JavaVirtualMachines/jdk1.7.0_60.jdk/Contents/Home/jre/lib/endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+<libraryInfo home="C:\Program Files\Java\jdk1.7.0_17" version="1.7.0_17">
+<bootpath>
+<entry path="C:\Program Files\Java\jdk1.7.0_17\jre\lib\resources.jar"/>
+<entry path="C:\Program Files\Java\jdk1.7.0_17\jre\lib\rt.jar"/>
+<entry path="C:\Program Files\Java\jdk1.7.0_17\jre\lib\sunrsasign.jar"/>
+<entry path="C:\Program Files\Java\jdk1.7.0_17\jre\lib\jsse.jar"/>
+<entry path="C:\Program Files\Java\jdk1.7.0_17\jre\lib\jce.jar"/>
+<entry path="C:\Program Files\Java\jdk1.7.0_17\jre\lib\charsets.jar"/>
+<entry path="C:\Program Files\Java\jdk1.7.0_17\jre\lib\jfr.jar"/>
+<entry path="C:\Program Files\Java\jdk1.7.0_17\jre\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\Program Files\Java\jdk1.7.0_17\jre\lib\ext"/>
+<entry path="C:\WINDOWS\Sun\Java\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="C:\Program Files\Java\jdk1.7.0_17\jre\lib\endorsed"/>
 </endorsedDirs>
 </libraryInfo>
 </libraryInfos>

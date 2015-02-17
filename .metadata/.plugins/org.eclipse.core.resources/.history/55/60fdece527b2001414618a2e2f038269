@@ -1,0 +1,154 @@
+package com.ccc.playground.hashfunc;
+
+import java.util.Arrays;
+
+/**
+ * A Hash Table is just an array couple with a function, which is called the hash function.
+ * The Hash Function takes a piece of data as input [a key] and outputs an integer commonly refer to as a hash value.
+ * The Hash Value maps the input [a key] to a particular index in the hash table [an array].
+ * Initially the hash function is used to determine where in the hash table [an array] to store a given key.  Later you use
+ * the same hash function to determine where in the hash table to search for a given key.
+ * 
+ * When two different inputs or keys hash to the same index in the hash function we have a collision.  Therefore, hashing functions
+ * must include some form of collision resolution policy.  Collision resolution techniques can be broken into two classes: 
+ * 1.  Closed Hashing or Open Addressing or Linear Probing
+ *     If a key hashes to the same index as the previously stored key, it is assigned the next available slot or index in the hash table. 
+ *     Clustering:  As you can see once a collision occurs, you significantly increase chances that another collision will occur in the same slot.
+ *     Clustering is a serious drawback to linear probing.  Moreover, worst-case insertion, deletion, and lookup times have devolved to O(n), as
+ *     the next available slot could have potentially been the last slot in the hash table. 
+ *       
+ * 2.  Open Hashing or Separate Chaining: 
+ *     An array of pointers to singly linked list(s). 
+ *     The idea is to keep a singly linked list in each index for all keys that hash to the same hash value [to a particular index].
+ *     The hash table [array] indexes are pointers to the first nodes of the singly linked list. 
+ *     A new node is inserted to the front or head of the singly linked list, which is O(1).
+ *     
+ *     Advantages:
+ *     - Better space utilization for large items
+ *     - Simple collision handling:  searching a singly linked list.
+ *     - Overflow:  we can store more items than the hash table [array] size.
+ *     - Deletion is quick and easy:  deletion from the singly linked list.
+ *  
+ *  
+ *  Hash Tables are NOT efficient in operations that require any ordering information among elements [slots or indexes], such
+ *  as findMin, findMax and printing the entire hash table in sorted order.
+ * 
+ * @author Gibran E. Castillo
+ *
+ */
+public class ModulusHashFunction {
+	private int arraySize;
+	private String[] theHashTableArray;
+	private int itemsInArray = 0;
+	
+	public ModulusHashFunction(int arraySize) {
+		this.arraySize = arraySize;
+		this.theHashTableArray = new String[arraySize];
+		Arrays.fill(this.theHashTableArray, "-1");
+	}
+	
+	/**
+	 * A good hash function qualities:
+	 * - Easy to compute:  O(1) to insert, search or delete.
+	 * - Even Distribution:  Lots of slots or elements in the hash table [array].
+	 *                       All keys should be uniformly and evenly distributed in the hash table [array].
+	 * - Less Collision:  Load Factor equals ratio of number of elements (N) in a hash table [array] to the hash table size (T).
+	 *                    N = number of keys or input values
+	 *                    T = hash table [array] size
+	 *                    Load Factor = N/T
+	 *                    Example:  N: 100  T: 10; therefore, Load Factor = 100/10 = 10.  That means each index in the hash table
+	 *                    will has a singly linked list with ten nodes each.
+	 * 
+	 * For Strings, you need to take their ASCII value.
+	 * 
+	 * @param elemsToAddToHt1
+	 * @param theArray
+	 */
+	public void hashFunction1(String[] elemsToAddToHt1, String[] theArray) {
+		for(int i = 0; i < elemsToAddToHt1.length; i++) {
+			String newElementVal = elemsToAddToHt1[i];
+			
+			/*
+			 * Put values in the same index that match their value, if their value is one, it will be store in index 1.
+			 * Put the array values in stringsForArray into the hash table, that is, String[] theArray
+			 * This is the hash function
+			 */
+			theArray[Integer.parseInt(newElementVal)]  = newElementVal;
+		}
+	}
+	
+	public void hashFunction2(String[] elemsToAddToHt1, String[] theArray) {
+		for(int i = 0; i < elemsToAddToHt1.length; i++) {
+			String newElementVal = elemsToAddToHt1[i];
+			
+			/*
+			 * Put values in the same index that match their value, if their value is one, it will be store in index 1.
+			 * Put the array values in stringsForArray into the hash table, that is, String[] theArray
+			 * This is the hash function
+			 */
+			theArray[Integer.parseInt(newElementVal)]  = newElementVal;
+		}
+	}
+	
+	public void displayTheHashTable() {
+		int increment = 0;
+		
+		for(int i = 0; i < 3; i++) {
+			increment += 10;
+			
+			// Upper hash table or array margin [boundary]
+			for(int j = 0; j < 71; j++) {
+				System.out.print("-");
+			}
+			
+			System.out.println();
+			
+			// Hash table or array index
+			for(int elemIndex = increment - 10; elemIndex < increment; elemIndex++) {
+				System.out.format("| %3s " + " ", elemIndex);
+			}
+			
+			System.out.println("|");
+			
+			//  Element index and Element value margin [boundary]
+			for(int j = 0; j < 71; j++) {
+				System.out.print("-");
+			}
+			
+			System.out.println();
+			
+			// Hash table or array value
+			for(int elemVal = increment - 10; elemVal < increment; elemVal++) {
+				if(this.theHashTableArray[elemVal].equals("-1")) {
+					System.out.print("|      ");
+				} else {
+					System.out.format("| %3s " + " ", this.theHashTableArray[elemVal]);
+				}
+			}
+			
+			System.out.println("|");
+			
+			// Lower hash table or array margin [boundary]
+			for(int j = 0; j < 71; j++) {
+				System.out.print("-");
+			}
+			
+			System.out.println("\n");
+		}
+	}
+	
+	public static void main(String[] args) {
+		/*
+		 * String array has the elements to add to the hash table String[] theArray
+		 * Limited to element values from 0 - 29
+		 */
+		String[] elemsToAddToHt1 = {"1", "5", "17", "21", "26"};
+		
+		ModulusHashFunction theFunc = new ModulusHashFunction(30);
+		
+		theFunc.hashFunction1(elemsToAddToHt1, theFunc.theHashTableArray);
+		
+		
+		theFunc.displayTheHashTable();
+	}
+}

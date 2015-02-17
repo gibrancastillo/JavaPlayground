@@ -16,6 +16,10 @@ import java.util.Random;
  */
 public class MaximumArrayValue {
 	
+	/**
+	 * 
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		MaximumArrayValue maxArrayValue = new MaximumArrayValue();
 		int numbers[] = new int[900000];

@@ -100,3 +100,414 @@ java.lang.NumberFormatException: null
 2014-12-19 00:14:03.177 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre7\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
 2014-12-19 00:14:04.892 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@273f2a
 2014-12-19 00:14:19.551 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@273f2a stopped with exit code 2
+2014-12-20 18:05:44.131 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre7\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2014-12-20 18:05:44.391 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@107d6c3
+2014-12-20 18:05:48.971 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@107d6c3 stopped with exit code 2
+2014-12-21 14:44:38.565 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre7\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2014-12-21 14:44:43.809 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@1b17f16
+2014-12-21 14:44:45.450 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@1b17f16 stopped with exit code 2
+2014-12-27 13:11:35.567 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre7\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2014-12-27 13:11:44.659 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@41b81
+2014-12-27 13:11:48.174 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@41b81 stopped with exit code 2
+2014-12-29 09:33:36.636 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre7\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2014-12-29 09:33:42.333 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@1c9f91c
+2014-12-29 09:33:44.360 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@1c9f91c stopped with exit code 2
+2014-12-30 09:42:22.287 [Worker-3] WARN  HttpNotifications - Cannot convert rebel.notification.port to integer
+java.lang.NumberFormatException: null
+	at java.lang.Integer.parseInt(Unknown Source) ~[na:1.7.0_17]
+	at java.lang.Integer.valueOf(Unknown Source) ~[na:1.7.0_17]
+	at org.zeroturnaround.eclipse.jrebel.http.HttpNotifications.startServer(HttpNotifications.java:44) ~[org.zeroturnaround.eclipse_5.4.2.RELEASE-201311281027.jar:na]
+	at org.zeroturnaround.eclipse.RebelPlugin.start(RebelPlugin.java:130) [org.zeroturnaround.eclipse_5.4.2.RELEASE-201311281027.jar:na]
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:711) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at java.security.AccessController.doPrivileged(Native Method) [na:1.7.0_17]
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:702) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:683) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:381) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:300) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:478) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.setLazyTrigger(BundleLoader.java:263) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:109) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:469) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:395) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:464) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at java.lang.ClassLoader.loadClass(Unknown Source) [na:1.7.0_17]
+	at org.eclipse.osgi.internal.loader.BundleLoader.loadClass(BundleLoader.java:340) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.framework.internal.core.BundleHost.loadClass(BundleHost.java:229) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.loadClass(AbstractBundle.java:1212) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174) [org.eclipse.equinox.registry_3.5.301.v20130717-1549.jar:na]
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905) [org.eclipse.equinox.registry_3.5.301.v20130717-1549.jar:na]
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243) [org.eclipse.equinox.registry_3.5.301.v20130717-1549.jar:na]
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55) [org.eclipse.equinox.registry_3.5.301.v20130717-1549.jar:na]
+	at org.eclipse.ui.internal.WorkbenchPlugin$1.run(WorkbenchPlugin.java:282) [org.eclipse.ui.workbench_3.105.1.v20130821-1411.jar:na]
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:52) [org.eclipse.swt.win32.win32.x86_3.102.1.v20130827-2048.jar:na]
+	at org.eclipse.ui.internal.WorkbenchPlugin.createExtension(WorkbenchPlugin.java:278) [org.eclipse.ui.workbench_3.105.1.v20130821-1411.jar:na]
+	at org.eclipse.ui.internal.EarlyStartupRunnable.getExecutableExtension(EarlyStartupRunnable.java:117) [org.eclipse.ui.workbench_3.105.1.v20130821-1411.jar:na]
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:66) [org.eclipse.ui.workbench_3.105.1.v20130821-1411.jar:na]
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42) [org.eclipse.equinox.common_3.6.200.v20130402-1505.jar:na]
+	at org.eclipse.ui.internal.Workbench$55.run(Workbench.java:2551) [org.eclipse.ui.workbench_3.105.1.v20130821-1411.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53) [org.eclipse.core.jobs_3.5.300.v20130429-1813.jar:na]
+2014-12-30 09:42:25.176 [Worker-3] DEBUG HttpNotifications - Listening to JRebel notifications at http://127.0.0.1:56414/jrebel/notifications
+2014-12-30 09:42:25.464 [Worker-3] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre7\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2014-12-30 09:42:25.554 [Worker-3] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@114ad7
+2014-12-30 09:42:25.785 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre7\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2014-12-30 09:42:25.798 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@fb658a
+2014-12-30 09:42:28.163 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@fb658a stopped with exit code 2
+2014-12-30 09:42:28.175 [Worker-3] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@114ad7 stopped with exit code 2
+2014-12-31 00:01:22.575 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre7\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2014-12-31 00:01:22.608 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@6c67a0
+2014-12-31 00:01:22.977 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@6c67a0 stopped with exit code 2
+2015-01-01 21:46:58.576 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre7\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2015-01-01 21:47:04.745 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@8d6950
+2015-01-01 21:47:08.676 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@8d6950 stopped with exit code 2
+2015-01-02 09:24:33.552 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre7\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2015-01-02 09:24:39.315 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@f2a17
+2015-01-02 09:24:42.460 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@f2a17 stopped with exit code 2
+2015-01-04 14:06:25.027 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre7\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2015-01-04 14:06:32.396 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@e66610
+2015-01-04 14:06:36.274 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@e66610 stopped with exit code 2
+2015-01-05 07:46:10.546 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre7\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2015-01-05 07:46:28.534 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@17329fc
+2015-01-05 07:46:29.552 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@17329fc stopped with exit code 2
+2015-01-06 07:54:08.560 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre7\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2015-01-06 07:54:14.808 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@b3db7c
+2015-01-06 07:54:20.689 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@b3db7c stopped with exit code 2
+2015-01-07 08:58:35.058 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre7\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2015-01-07 08:58:37.402 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@1afcee3
+2015-01-07 08:58:39.775 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@1afcee3 stopped with exit code 2
+2015-01-08 08:42:12.554 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre7\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2015-01-08 08:42:36.111 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@a13a0e
+2015-01-08 08:43:28.690 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@a13a0e stopped with exit code 2
+2015-01-09 07:31:53.528 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre7\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2015-01-09 07:31:58.900 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@44a130
+2015-01-09 07:32:20.264 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@44a130 stopped with exit code 2
+2015-01-15 21:26:11.051 [Worker-3] WARN  HttpNotifications - Cannot convert rebel.notification.port to integer
+java.lang.NumberFormatException: null
+	at java.lang.Integer.parseInt(Unknown Source) ~[na:1.7.0_17]
+	at java.lang.Integer.valueOf(Unknown Source) ~[na:1.7.0_17]
+	at org.zeroturnaround.eclipse.jrebel.http.HttpNotifications.startServer(HttpNotifications.java:44) ~[org.zeroturnaround.eclipse_5.4.2.RELEASE-201311281027.jar:na]
+	at org.zeroturnaround.eclipse.RebelPlugin.start(RebelPlugin.java:130) [org.zeroturnaround.eclipse_5.4.2.RELEASE-201311281027.jar:na]
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:711) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at java.security.AccessController.doPrivileged(Native Method) [na:1.7.0_17]
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:702) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:683) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:381) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:300) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:478) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.setLazyTrigger(BundleLoader.java:263) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:109) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:469) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:395) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:464) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at java.lang.ClassLoader.loadClass(Unknown Source) [na:1.7.0_17]
+	at org.eclipse.osgi.internal.loader.BundleLoader.loadClass(BundleLoader.java:340) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.framework.internal.core.BundleHost.loadClass(BundleHost.java:229) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.loadClass(AbstractBundle.java:1212) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174) [org.eclipse.equinox.registry_3.5.301.v20130717-1549.jar:na]
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905) [org.eclipse.equinox.registry_3.5.301.v20130717-1549.jar:na]
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243) [org.eclipse.equinox.registry_3.5.301.v20130717-1549.jar:na]
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55) [org.eclipse.equinox.registry_3.5.301.v20130717-1549.jar:na]
+	at org.eclipse.ui.internal.WorkbenchPlugin$1.run(WorkbenchPlugin.java:282) [org.eclipse.ui.workbench_3.105.1.v20130821-1411.jar:na]
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:52) [org.eclipse.swt.win32.win32.x86_3.102.1.v20130827-2048.jar:na]
+	at org.eclipse.ui.internal.WorkbenchPlugin.createExtension(WorkbenchPlugin.java:278) [org.eclipse.ui.workbench_3.105.1.v20130821-1411.jar:na]
+	at org.eclipse.ui.internal.EarlyStartupRunnable.getExecutableExtension(EarlyStartupRunnable.java:117) [org.eclipse.ui.workbench_3.105.1.v20130821-1411.jar:na]
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:66) [org.eclipse.ui.workbench_3.105.1.v20130821-1411.jar:na]
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42) [org.eclipse.equinox.common_3.6.200.v20130402-1505.jar:na]
+	at org.eclipse.ui.internal.Workbench$55.run(Workbench.java:2551) [org.eclipse.ui.workbench_3.105.1.v20130821-1411.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53) [org.eclipse.core.jobs_3.5.300.v20130429-1813.jar:na]
+2015-01-15 21:26:13.250 [Worker-3] DEBUG HttpNotifications - Listening to JRebel notifications at http://127.0.0.1:49871/jrebel/notifications
+2015-01-15 21:26:13.453 [Worker-3] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre7\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2015-01-15 21:26:13.516 [Worker-3] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@f3503d
+2015-01-15 21:26:13.828 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre7\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2015-01-15 21:26:13.828 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@18a14c7
+2015-01-15 21:26:14.296 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@18a14c7 stopped with exit code 2
+2015-01-15 21:26:14.311 [Worker-3] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@f3503d stopped with exit code 2
+2015-01-16 10:38:22.120 [Worker-0] WARN  HttpNotifications - Cannot convert rebel.notification.port to integer
+java.lang.NumberFormatException: null
+	at java.lang.Integer.parseInt(Unknown Source) ~[na:1.7.0_17]
+	at java.lang.Integer.valueOf(Unknown Source) ~[na:1.7.0_17]
+	at org.zeroturnaround.eclipse.jrebel.http.HttpNotifications.startServer(HttpNotifications.java:44) ~[org.zeroturnaround.eclipse_5.4.2.RELEASE-201311281027.jar:na]
+	at org.zeroturnaround.eclipse.RebelPlugin.start(RebelPlugin.java:130) [org.zeroturnaround.eclipse_5.4.2.RELEASE-201311281027.jar:na]
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:711) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at java.security.AccessController.doPrivileged(Native Method) [na:1.7.0_17]
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:702) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:683) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:381) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:300) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:478) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.setLazyTrigger(BundleLoader.java:263) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:109) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:469) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:395) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:464) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at java.lang.ClassLoader.loadClass(Unknown Source) [na:1.7.0_17]
+	at org.eclipse.osgi.internal.loader.BundleLoader.loadClass(BundleLoader.java:340) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.framework.internal.core.BundleHost.loadClass(BundleHost.java:229) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.loadClass(AbstractBundle.java:1212) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174) [org.eclipse.equinox.registry_3.5.301.v20130717-1549.jar:na]
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905) [org.eclipse.equinox.registry_3.5.301.v20130717-1549.jar:na]
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243) [org.eclipse.equinox.registry_3.5.301.v20130717-1549.jar:na]
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55) [org.eclipse.equinox.registry_3.5.301.v20130717-1549.jar:na]
+	at org.eclipse.ui.internal.WorkbenchPlugin$1.run(WorkbenchPlugin.java:282) [org.eclipse.ui.workbench_3.105.1.v20130821-1411.jar:na]
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:52) [org.eclipse.swt.win32.win32.x86_3.102.1.v20130827-2048.jar:na]
+	at org.eclipse.ui.internal.WorkbenchPlugin.createExtension(WorkbenchPlugin.java:278) [org.eclipse.ui.workbench_3.105.1.v20130821-1411.jar:na]
+	at org.eclipse.ui.internal.EarlyStartupRunnable.getExecutableExtension(EarlyStartupRunnable.java:117) [org.eclipse.ui.workbench_3.105.1.v20130821-1411.jar:na]
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:66) [org.eclipse.ui.workbench_3.105.1.v20130821-1411.jar:na]
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42) [org.eclipse.equinox.common_3.6.200.v20130402-1505.jar:na]
+	at org.eclipse.ui.internal.Workbench$55.run(Workbench.java:2551) [org.eclipse.ui.workbench_3.105.1.v20130821-1411.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53) [org.eclipse.core.jobs_3.5.300.v20130429-1813.jar:na]
+2015-01-16 10:38:26.013 [Worker-0] DEBUG HttpNotifications - Listening to JRebel notifications at http://127.0.0.1:52888/jrebel/notifications
+2015-01-16 10:38:26.365 [Worker-0] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre7\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2015-01-16 10:38:26.571 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre7\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2015-01-16 10:38:26.871 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@9402ef
+2015-01-16 10:38:26.934 [Worker-0] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@7d6d0d
+2015-01-16 10:38:28.104 [Worker-0] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@7d6d0d stopped with exit code 2
+2015-01-16 10:38:28.151 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@9402ef stopped with exit code 2
+2015-01-17 21:20:11.819 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre7\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2015-01-17 21:20:12.648 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@87b9fc
+2015-01-17 21:20:14.802 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@87b9fc stopped with exit code 2
+2015-01-19 21:14:58.171 [Worker-3] WARN  HttpNotifications - Cannot convert rebel.notification.port to integer
+java.lang.NumberFormatException: null
+	at java.lang.Integer.parseInt(Unknown Source) ~[na:1.7.0_17]
+	at java.lang.Integer.valueOf(Unknown Source) ~[na:1.7.0_17]
+	at org.zeroturnaround.eclipse.jrebel.http.HttpNotifications.startServer(HttpNotifications.java:44) ~[org.zeroturnaround.eclipse_5.4.2.RELEASE-201311281027.jar:na]
+	at org.zeroturnaround.eclipse.RebelPlugin.start(RebelPlugin.java:130) [org.zeroturnaround.eclipse_5.4.2.RELEASE-201311281027.jar:na]
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:711) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at java.security.AccessController.doPrivileged(Native Method) [na:1.7.0_17]
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:702) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:683) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:381) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:300) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:478) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.setLazyTrigger(BundleLoader.java:263) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:109) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:469) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:395) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:464) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at java.lang.ClassLoader.loadClass(Unknown Source) [na:1.7.0_17]
+	at org.eclipse.osgi.internal.loader.BundleLoader.loadClass(BundleLoader.java:340) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.framework.internal.core.BundleHost.loadClass(BundleHost.java:229) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.loadClass(AbstractBundle.java:1212) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174) [org.eclipse.equinox.registry_3.5.301.v20130717-1549.jar:na]
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905) [org.eclipse.equinox.registry_3.5.301.v20130717-1549.jar:na]
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243) [org.eclipse.equinox.registry_3.5.301.v20130717-1549.jar:na]
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55) [org.eclipse.equinox.registry_3.5.301.v20130717-1549.jar:na]
+	at org.eclipse.ui.internal.WorkbenchPlugin$1.run(WorkbenchPlugin.java:282) [org.eclipse.ui.workbench_3.105.1.v20130821-1411.jar:na]
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:52) [org.eclipse.swt.win32.win32.x86_3.102.1.v20130827-2048.jar:na]
+	at org.eclipse.ui.internal.WorkbenchPlugin.createExtension(WorkbenchPlugin.java:278) [org.eclipse.ui.workbench_3.105.1.v20130821-1411.jar:na]
+	at org.eclipse.ui.internal.EarlyStartupRunnable.getExecutableExtension(EarlyStartupRunnable.java:117) [org.eclipse.ui.workbench_3.105.1.v20130821-1411.jar:na]
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:66) [org.eclipse.ui.workbench_3.105.1.v20130821-1411.jar:na]
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42) [org.eclipse.equinox.common_3.6.200.v20130402-1505.jar:na]
+	at org.eclipse.ui.internal.Workbench$55.run(Workbench.java:2551) [org.eclipse.ui.workbench_3.105.1.v20130821-1411.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53) [org.eclipse.core.jobs_3.5.300.v20130429-1813.jar:na]
+2015-01-19 21:14:59.840 [Worker-3] DEBUG HttpNotifications - Listening to JRebel notifications at http://127.0.0.1:55092/jrebel/notifications
+2015-01-19 21:14:59.965 [Worker-3] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre7\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2015-01-19 21:15:00.011 [Worker-3] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@7440f7
+2015-01-19 21:15:00.277 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre7\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2015-01-19 21:15:00.292 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@c17a18
+2015-01-19 21:15:00.511 [Worker-3] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@7440f7 stopped with exit code 2
+2015-01-19 21:15:00.713 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@c17a18 stopped with exit code 2
+2015-01-20 00:15:00.767 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre7\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2015-01-20 00:15:00.814 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@1e806fa
+2015-01-20 00:15:01.142 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@1e806fa stopped with exit code 2
+2015-01-21 09:29:18.546 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre7\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2015-01-21 09:29:28.796 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@113565b
+2015-01-21 09:29:32.149 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@113565b stopped with exit code 2
+2015-01-22 09:49:18.623 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre7\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2015-01-22 09:49:22.987 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@8de58d
+2015-01-22 09:49:32.939 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@8de58d stopped with exit code 2
+2015-01-23 09:07:00.522 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre7\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2015-01-23 09:07:14.196 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@186f583
+2015-01-23 09:07:20.414 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@186f583 stopped with exit code 2
+2015-01-25 18:52:31.510 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre7\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2015-01-25 18:52:36.595 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@1b64ccf
+2015-01-25 18:52:44.407 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@1b64ccf stopped with exit code 2
+2015-01-26 08:32:24.567 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre7\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2015-01-26 08:32:30.185 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@7ac062
+2015-01-26 08:32:44.981 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@7ac062 stopped with exit code 2
+2015-01-27 09:09:43.507 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Executing [java, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2015-01-27 09:09:51.364 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@170b3b3
+2015-01-27 09:10:09.402 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@170b3b3 stopped with exit code 2
+2015-01-28 08:25:57.598 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Executing [java, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2015-01-28 08:26:05.275 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@1a28d00
+2015-01-28 08:26:12.945 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@1a28d00 stopped with exit code 2
+2015-01-29 08:26:51.510 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Executing [java, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2015-01-29 08:27:03.293 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@10ed2e4
+2015-01-29 08:27:13.954 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@10ed2e4 stopped with exit code 2
+2015-01-30 09:26:46.210 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Executing [java, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2015-01-30 09:26:47.457 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@df07aa
+2015-01-30 09:26:50.290 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@df07aa stopped with exit code 2
+2015-01-30 14:43:26.695 [Worker-4] WARN  HttpNotifications - Cannot convert rebel.notification.port to integer
+java.lang.NumberFormatException: null
+	at java.lang.Integer.parseInt(Unknown Source) ~[na:1.8.0_31]
+	at java.lang.Integer.valueOf(Unknown Source) ~[na:1.8.0_31]
+	at org.zeroturnaround.eclipse.jrebel.http.HttpNotifications.startServer(HttpNotifications.java:44) ~[org.zeroturnaround.eclipse_5.4.2.RELEASE-201311281027.jar:na]
+	at org.zeroturnaround.eclipse.RebelPlugin.start(RebelPlugin.java:130) [org.zeroturnaround.eclipse_5.4.2.RELEASE-201311281027.jar:na]
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:711) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at java.security.AccessController.doPrivileged(Native Method) [na:1.8.0_31]
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:702) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:683) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:381) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:300) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:478) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.setLazyTrigger(BundleLoader.java:263) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:109) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:469) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:395) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:464) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at java.lang.ClassLoader.loadClass(Unknown Source) [na:1.8.0_31]
+	at org.eclipse.osgi.internal.loader.BundleLoader.loadClass(BundleLoader.java:340) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.framework.internal.core.BundleHost.loadClass(BundleHost.java:229) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.loadClass(AbstractBundle.java:1212) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174) [org.eclipse.equinox.registry_3.5.301.v20130717-1549.jar:na]
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905) [org.eclipse.equinox.registry_3.5.301.v20130717-1549.jar:na]
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243) [org.eclipse.equinox.registry_3.5.301.v20130717-1549.jar:na]
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55) [org.eclipse.equinox.registry_3.5.301.v20130717-1549.jar:na]
+	at org.eclipse.ui.internal.WorkbenchPlugin$1.run(WorkbenchPlugin.java:282) [org.eclipse.ui.workbench_3.105.1.v20130821-1411.jar:na]
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:52) [org.eclipse.swt.win32.win32.x86_3.102.1.v20130827-2048.jar:na]
+	at org.eclipse.ui.internal.WorkbenchPlugin.createExtension(WorkbenchPlugin.java:278) [org.eclipse.ui.workbench_3.105.1.v20130821-1411.jar:na]
+	at org.eclipse.ui.internal.EarlyStartupRunnable.getExecutableExtension(EarlyStartupRunnable.java:117) [org.eclipse.ui.workbench_3.105.1.v20130821-1411.jar:na]
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:66) [org.eclipse.ui.workbench_3.105.1.v20130821-1411.jar:na]
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42) [org.eclipse.equinox.common_3.6.200.v20130402-1505.jar:na]
+	at org.eclipse.ui.internal.Workbench$55.run(Workbench.java:2551) [org.eclipse.ui.workbench_3.105.1.v20130821-1411.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53) [org.eclipse.core.jobs_3.5.300.v20130429-1813.jar:na]
+2015-01-30 14:43:28.367 [Worker-4] DEBUG HttpNotifications - Listening to JRebel notifications at http://127.0.0.1:57884/jrebel/notifications
+2015-01-30 14:43:28.399 [Worker-4] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre1.8.0_31\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2015-01-30 14:43:28.750 [Worker-4] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@112dfc1
+2015-01-30 14:43:37.480 [Worker-4] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@112dfc1 stopped with exit code 2
+2015-02-02 07:54:50.507 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre1.8.0_31\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2015-02-02 07:54:57.570 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@ade92b
+2015-02-02 07:55:01.096 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@ade92b stopped with exit code 2
+2015-02-04 18:50:41.239 [Worker-3] WARN  HttpNotifications - Cannot convert rebel.notification.port to integer
+java.lang.NumberFormatException: null
+	at java.lang.Integer.parseInt(Unknown Source) ~[na:1.8.0_31]
+	at java.lang.Integer.valueOf(Unknown Source) ~[na:1.8.0_31]
+	at org.zeroturnaround.eclipse.jrebel.http.HttpNotifications.startServer(HttpNotifications.java:44) ~[org.zeroturnaround.eclipse_5.4.2.RELEASE-201311281027.jar:na]
+	at org.zeroturnaround.eclipse.RebelPlugin.start(RebelPlugin.java:130) [org.zeroturnaround.eclipse_5.4.2.RELEASE-201311281027.jar:na]
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:711) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at java.security.AccessController.doPrivileged(Native Method) [na:1.8.0_31]
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:702) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:683) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:381) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:300) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:478) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.setLazyTrigger(BundleLoader.java:263) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:109) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:469) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:395) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:464) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at java.lang.ClassLoader.loadClass(Unknown Source) [na:1.8.0_31]
+	at org.eclipse.osgi.internal.loader.BundleLoader.loadClass(BundleLoader.java:340) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.framework.internal.core.BundleHost.loadClass(BundleHost.java:229) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.loadClass(AbstractBundle.java:1212) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174) [org.eclipse.equinox.registry_3.5.301.v20130717-1549.jar:na]
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905) [org.eclipse.equinox.registry_3.5.301.v20130717-1549.jar:na]
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243) [org.eclipse.equinox.registry_3.5.301.v20130717-1549.jar:na]
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55) [org.eclipse.equinox.registry_3.5.301.v20130717-1549.jar:na]
+	at org.eclipse.ui.internal.WorkbenchPlugin$1.run(WorkbenchPlugin.java:282) [org.eclipse.ui.workbench_3.105.1.v20130821-1411.jar:na]
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:52) [org.eclipse.swt.win32.win32.x86_3.102.1.v20130827-2048.jar:na]
+	at org.eclipse.ui.internal.WorkbenchPlugin.createExtension(WorkbenchPlugin.java:278) [org.eclipse.ui.workbench_3.105.1.v20130821-1411.jar:na]
+	at org.eclipse.ui.internal.EarlyStartupRunnable.getExecutableExtension(EarlyStartupRunnable.java:117) [org.eclipse.ui.workbench_3.105.1.v20130821-1411.jar:na]
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:66) [org.eclipse.ui.workbench_3.105.1.v20130821-1411.jar:na]
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42) [org.eclipse.equinox.common_3.6.200.v20130402-1505.jar:na]
+	at org.eclipse.ui.internal.Workbench$55.run(Workbench.java:2551) [org.eclipse.ui.workbench_3.105.1.v20130821-1411.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53) [org.eclipse.core.jobs_3.5.300.v20130429-1813.jar:na]
+2015-02-04 18:50:43.504 [Worker-3] DEBUG HttpNotifications - Listening to JRebel notifications at http://127.0.0.1:62547/jrebel/notifications
+2015-02-04 18:50:44.171 [Worker-3] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre1.8.0_31\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2015-02-04 18:50:44.239 [Worker-3] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@1b3f1b2
+2015-02-04 18:50:45.208 [Worker-3] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@1b3f1b2 stopped with exit code 2
+2015-02-05 08:40:46.122 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre1.8.0_31\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2015-02-05 08:40:47.802 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@1352807
+2015-02-05 08:40:49.782 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@1352807 stopped with exit code 2
+2015-02-06 08:12:39.227 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre1.8.0_31\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2015-02-06 08:12:40.845 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@2d55a4
+2015-02-06 08:12:42.578 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@2d55a4 stopped with exit code 2
+2015-02-08 00:33:10.508 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre1.8.0_31\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2015-02-08 00:33:17.707 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@1480096
+2015-02-08 00:33:20.265 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@1480096 stopped with exit code 2
+2015-02-09 08:34:37.228 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre1.8.0_31\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2015-02-09 08:34:43.447 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@9d3a39
+2015-02-09 08:35:00.232 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@9d3a39 stopped with exit code 2
+2015-02-10 08:28:48.543 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre1.8.0_31\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2015-02-10 08:28:55.400 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@13e97fa
+2015-02-10 08:28:58.741 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@13e97fa stopped with exit code 2
+2015-02-11 08:35:25.574 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre1.8.0_31\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2015-02-11 08:35:29.548 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@1df3594
+2015-02-11 08:35:55.244 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@1df3594 stopped with exit code 2
+2015-02-12 09:20:38.514 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre1.8.0_31\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2015-02-12 09:20:55.015 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@14b7a9c
+2015-02-12 09:21:15.011 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@14b7a9c stopped with exit code 2
+2015-02-13 08:51:08.775 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre1.8.0_31\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2015-02-13 08:51:15.619 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@1cde4d4
+2015-02-13 08:51:25.657 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@1cde4d4 stopped with exit code 2
+2015-02-16 14:21:55.508 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre1.8.0_31\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2015-02-16 14:22:10.626 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@4c4147
+2015-02-16 14:22:13.654 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@4c4147 stopped with exit code 2
+2015-02-17 08:00:20.506 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre1.8.0_31\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2015-02-17 08:00:25.918 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@11a8885
+2015-02-17 08:00:31.655 [JRebel License Expiration Notification Checker] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@11a8885 stopped with exit code 2
+2015-02-17 14:44:29.592 [Worker-3] WARN  HttpNotifications - Cannot convert rebel.notification.port to integer
+java.lang.NumberFormatException: null
+	at java.lang.Integer.parseInt(Unknown Source) ~[na:1.8.0_31]
+	at java.lang.Integer.valueOf(Unknown Source) ~[na:1.8.0_31]
+	at org.zeroturnaround.eclipse.jrebel.http.HttpNotifications.startServer(HttpNotifications.java:44) ~[org.zeroturnaround.eclipse_5.4.2.RELEASE-201311281027.jar:na]
+	at org.zeroturnaround.eclipse.RebelPlugin.start(RebelPlugin.java:130) [org.zeroturnaround.eclipse_5.4.2.RELEASE-201311281027.jar:na]
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:711) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at java.security.AccessController.doPrivileged(Native Method) [na:1.8.0_31]
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:702) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:683) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:381) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:300) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:478) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.setLazyTrigger(BundleLoader.java:263) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:109) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:469) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:395) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:464) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at java.lang.ClassLoader.loadClass(Unknown Source) [na:1.8.0_31]
+	at org.eclipse.osgi.internal.loader.BundleLoader.loadClass(BundleLoader.java:340) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.framework.internal.core.BundleHost.loadClass(BundleHost.java:229) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.loadClass(AbstractBundle.java:1212) [org.eclipse.osgi_3.9.1.v20130814-1242.jar:na]
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174) [org.eclipse.equinox.registry_3.5.301.v20130717-1549.jar:na]
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905) [org.eclipse.equinox.registry_3.5.301.v20130717-1549.jar:na]
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243) [org.eclipse.equinox.registry_3.5.301.v20130717-1549.jar:na]
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55) [org.eclipse.equinox.registry_3.5.301.v20130717-1549.jar:na]
+	at org.eclipse.ui.internal.WorkbenchPlugin$1.run(WorkbenchPlugin.java:282) [org.eclipse.ui.workbench_3.105.1.v20130821-1411.jar:na]
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:52) [org.eclipse.swt.win32.win32.x86_3.102.1.v20130827-2048.jar:na]
+	at org.eclipse.ui.internal.WorkbenchPlugin.createExtension(WorkbenchPlugin.java:278) [org.eclipse.ui.workbench_3.105.1.v20130821-1411.jar:na]
+	at org.eclipse.ui.internal.EarlyStartupRunnable.getExecutableExtension(EarlyStartupRunnable.java:117) [org.eclipse.ui.workbench_3.105.1.v20130821-1411.jar:na]
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:66) [org.eclipse.ui.workbench_3.105.1.v20130821-1411.jar:na]
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42) [org.eclipse.equinox.common_3.6.200.v20130402-1505.jar:na]
+	at org.eclipse.ui.internal.Workbench$55.run(Workbench.java:2551) [org.eclipse.ui.workbench_3.105.1.v20130821-1411.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53) [org.eclipse.core.jobs_3.5.300.v20130429-1813.jar:na]
+2015-02-17 14:44:31.772 [Worker-3] DEBUG HttpNotifications - Listening to JRebel notifications at http://127.0.0.1:58214/jrebel/notifications
+2015-02-17 14:44:31.902 [Worker-3] DEBUG o.z.exec.ProcessExecutor - Executing [C:\Program Files (x86)\Java\jre1.8.0_31\bin\java.exe, -Drebel.log=false, -Drebel.log.stdout=false, -Drebel.properties=C:\Users\gecasti\.jrebel\jrebel.properties, -Drebel.license_server.legacy=false, -cp, C:\Program Files\eclipse\juno\plugins\org.zeroturnaround.eclipse.embedder_5.4.2.RELEASE-201311281027\jrebel\jrebel.jar, com.zeroturnaround.javarebel.CLILicensingAPIImpl, getCurrentLicense, ]...
+2015-02-17 14:44:32.202 [Worker-3] DEBUG o.z.exec.ProcessExecutor - Started java.lang.ProcessImpl@4e0282
+2015-02-17 14:44:33.836 [Worker-3] DEBUG o.z.exec.WaitForProcess - java.lang.ProcessImpl@4e0282 stopped with exit code 2
