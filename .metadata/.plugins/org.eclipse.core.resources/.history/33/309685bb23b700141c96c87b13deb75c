@@ -1,0 +1,101 @@
+package com.ccc.playground.openhash;
+
+import java.util.Scanner;
+
+/**
+ * A Singly Linked List that will be reference in the indices in the hash table [array].
+ * 
+ */
+class WordList {
+	// Reference to first Link in list
+	// The last link added to the Linked List
+	public Word firstWord = null;
+	
+	public void insert(Word wordToInsert, int hashKey) {
+		Word previous = null;
+		Word current = firstWord;
+		
+		wordToInsert.key = hashKey;
+		
+		while(current != null && wordToInsert.key > current.key) {
+			// inserting new Words or nodes in order in the singly linked list
+			previous = current;
+			current = current.next;
+		}
+		
+		if(previous == null) {
+			firstWord = wordToInsert;
+		} else {
+			previous.next = wordToInsert;
+		}
+		
+		wordToInsert.next = current;
+	}
+	
+	public Word find(int hashKey) {
+		Word current = firstWord;
+		
+		/*
+		 * Search for key, but stop searching if the hashKey < what we are searching for.
+		 * Because, the list is sorted, this allows us to avoid searching the whole list.
+		 */
+		while(current != null && current.key <= hashKey) {
+			if(current.key == hashKey) {
+				return current;
+			}
+			
+			current = current.next;
+		}
+		
+		return null;
+	}
+	
+	public Word find(int hashKey, String wordToFind) {
+		Word current = firstWord;
+		
+		/*
+		 * Search for key, but stop searching if the hashKey < what we are searching for.
+		 * Because, the list is sorted, this allows us to avoid searching the whole list.
+		 */
+		while(current != null && current.key <= hashKey) {
+			if(current.theWord.equals(wordToFind)) {
+				return current;
+			}
+			
+			current = current.next;
+		}
+		
+		return null;
+	}
+	
+	public void displayWordList() {
+		Word current = firstWord;
+		
+		while(current != null) {
+			System.out.println(current);
+			current = current.next;
+		}
+	}
+	
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		
+		// Make a 11 item array that will hold words and definitions
+		SeparateChainingHashFunction separateChainingHashTable = new SeparateChainingHashFunction(11);
+		
+		String wordLookUp = "a";
+		
+		// Keep accepting input from the user as long as they don't enter the letter 'z'.
+		while(!wordLookUp.equalsIgnoreCase("z")) {
+			System.out.print("Type the word name's definition you are searchin for: ");
+			
+			wordLookUp = input.nextLine();
+			
+			// Look for the word requested and print out to screen the word and it's definition.
+			System.out.println(separateChainingHashTable.find(wordLookUp));
+		}
+		
+		// Display every item hash table [array] with the index they are associated with
+		separateChainingHashTable.displayTheHashTable();
+	}
+}

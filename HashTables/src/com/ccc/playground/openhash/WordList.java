@@ -2,6 +2,10 @@ package com.ccc.playground.openhash;
 
 import java.util.Scanner;
 
+/**
+ * A Singly Linked List that will be reference in the indices in the hash table [array].
+ * 
+ */
 class WordList {
 	// Reference to first Link in list
 	// The last link added to the Linked List
@@ -14,6 +18,7 @@ class WordList {
 		wordToInsert.key = hashKey;
 		
 		while(current != null && wordToInsert.key > current.key) {
+			// inserting new Words or nodes in order in the singly linked list
 			previous = current;
 			current = current.next;
 		}
@@ -45,11 +50,20 @@ class WordList {
 		return null;
 	}
 	
-	public void displayWordList() {
+	/*public void displayWordList() {
 		Word current = firstWord;
 		
 		while(current != null) {
 			System.out.println(current);
+			current = current.next;
+		}
+	}*/
+	
+	public void displayWordList() {
+		Word current = firstWord;
+		
+		while(current != null) {
+			System.out.print(current + " -> ");
 			current = current.next;
 		}
 	}
@@ -58,6 +72,22 @@ class WordList {
 		Scanner input = new Scanner(System.in);
 		
 		// Make a 11 item array that will hold words and definitions
+		SeparateChainingHashFunction separateChainingHashTable = new SeparateChainingHashFunction(11);
 		
+		String wordLookUp = "a";
+		
+		// Keep accepting input from the user as long as they don't enter the letter 'z'.
+		while(!wordLookUp.equalsIgnoreCase("z")) {
+			System.out.print("Type the word name's definition you are searchin for: ");
+			
+			wordLookUp = input.nextLine();
+			
+			// Look for the word requested and print out to screen the word and it's definition.
+			System.out.println(separateChainingHashTable.find(wordLookUp) + "\n");
+		}
+		
+		System.out.println("Display every item hash table [array] with the index they are associated with:");
+		
+		separateChainingHashTable.displayTheHashTable();
 	}
 }

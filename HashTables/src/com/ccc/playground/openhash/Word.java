@@ -1,5 +1,9 @@
 package com.ccc.playground.openhash;
 
+/**
+ * Abstract Data Type
+ * 
+ */
 class Word {
 	public int key;
 	public String theWord;
@@ -15,6 +19,6 @@ class Word {
 	
 	@Override
 	public String toString() {
-		return this.theWord + " : " + this.definition;
+		return this.theWord + ": " + this.definition;
 	}
 }

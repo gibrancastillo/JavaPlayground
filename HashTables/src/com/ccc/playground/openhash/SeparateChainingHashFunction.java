@@ -67,6 +67,7 @@ public class SeparateChainingHashFunction {
 	WordList[] theHashTableArray;
 	int itemsInArray = 0;
 	
+	// A mini dictionary
 	public String[][] elementsToAdd = {
 			{ "ace", "Very good" },
 			{ "act", "Take action" },
@@ -97,17 +98,21 @@ public class SeparateChainingHashFunction {
 			{ "axe", "Edge tool with a heavy bladed head" },
 			{ "aye", "An affirmative answer" } };
 	
+	/**
+	 * 
+	 * @param arraySize
+	 */
 	SeparateChainingHashFunction(int arraySize) {
 		this.arraySize = arraySize;
 		this.theHashTableArray = new WordList[arraySize];
 		
-		// Fill the hash table [array] with WordLists
+		// Fill each slot or element in the hash table [array] with a WordLists [a singly linked list].
 		for(int i = 0; i < this.arraySize; i++) {
 			this.theHashTableArray[i] = new WordList();
 		}
 		
 		//Arrays.fill(this.theHashTableArray, new WordList());
-		//addTheArray(elementsToAdd);
+		addTheArray(elementsToAdd);
 	}
 	
 	/**
@@ -124,10 +129,14 @@ public class SeparateChainingHashFunction {
 	 * 
 	 * For Strings, you need to take their ASCII value.
 	 * 
+	 * This could be used to make a dictionary, spell checker, auto completion tool, etc.
+	 * 
 	 * @param wordToHash
 	 */
-	public int stringHashFunction1(String wordToHash) {
+	public int stringHashFunction(String wordToHash) {
 		int hashKeyValue = 0;
+		
+		System.out.println("wordToHash or piece of input [key]: " + wordToHash);
 		
 		for(int i = 0; i < wordToHash.length(); i++) {
 			// 'a' has the ASCII character code of 97 so subtract 96 to make our letters start at 1.
@@ -140,6 +149,8 @@ public class SeparateChainingHashFunction {
 			System.out.println("Hash Key Value " + hkVTemp + " * 27 + Character Code " + charCode + " % arraySize " + this.arraySize + " = " + hashKeyValue);
 		}
 		
+		// The Hash Value maps the input [a key] to a particular index in the hash table [an array].
+		System.out.println("hashKeyValue or an integer commonly refer to as a hash value: " + hashKeyValue);
 		System.out.println();
 		
 		return hashKeyValue;
@@ -149,58 +160,52 @@ public class SeparateChainingHashFunction {
 		String wordToHash = wordToInsert.theWord;
 		
 		// Calculate the hashKey for the Word
-		int hashKey = stringHashFunction1(wordToHash);
+		int hashKey = stringHashFunction(wordToHash);
 		
 		// Add the new word to the hash table [array] and set the key for the Word
 		theHashTableArray[hashKey].insert(wordToInsert, hashKey);
 	}
 	
+	public Word find(String wordToFind) {
+		// Calculate the hash key for the word
+		int hashKey = stringHashFunction(wordToFind);
+		
+		// NEW
+		Word theWord = theHashTableArray[hashKey].find(hashKey, wordToFind);
+		
+		return theWord;
+	}
 	
+	public void addTheArray(String[][] elementsToAdd) {
+		for(int i = 0; i < elementsToAdd.length; i++) {
+			String word = elementsToAdd[i][0]; // Rows
+			String definition = elementsToAdd[i][1]; // Columns
+			
+			// Create the Word with the word name and definition
+			Word newWord = new Word(word, definition);
+			
+			// Add the new Word to the Hash Table array
+			insert(newWord);
+		}
+	}
+	
+	/*public void displayTheHashTable() {
+		for(int i = 0; i < arraySize; i++) {
+			System.out.println("theHashTableArray Index " + i);
+			
+			theHashTableArray[i].displayWordList();
+		}
+	}*/
 	
 	public void displayTheHashTable() {
-		int increment = 0;
+		System.out.println("index  Word Singly Linked List");
 		
-		for(int i = 0; i < 3; i++) {
-			increment += 10;
+		for(int i = 0; i < arraySize; i++) {
+			System.out.print(" " + i + " --> ");
 			
-			// Upper hash table or array margin [boundary]
-			for(int j = 0; j < 71; j++) {
-				System.out.print("-");
-			}
+			theHashTableArray[i].displayWordList();
 			
 			System.out.println();
-			
-			// Hash table or array index
-			for(int elemIndex = increment - 10; elemIndex < increment; elemIndex++) {
-				System.out.format("| %3s " + " ", elemIndex);
-			}
-			
-			System.out.println("|");
-			
-			//  Element index and Element value margin [boundary]
-			for(int j = 0; j < 71; j++) {
-				System.out.print("-");
-			}
-			
-			System.out.println();
-			
-			// Hash table or array value
-			for(int elemVal = increment - 10; elemVal < increment; elemVal++) {
-				if(this.theHashTableArray[elemVal].equals("-1")) {
-					System.out.print("|      ");
-				} else {
-					System.out.format("| %3s " + " ", this.theHashTableArray[elemVal]);
-				}
-			}
-			
-			System.out.println("|");
-			
-			// Lower hash table or array margin [boundary]
-			for(int j = 0; j < 71; j++) {
-				System.out.print("-");
-			}
-			
-			System.out.println("\n");
 		}
 	}
 }
