@@ -1,0 +1,14 @@
+package com.ccc.annotationsdemo;
+
+@SimpleNote
+public class AnnotationApp {
+	
+	@SimpleNote
+	public void someMethod(int param1) {
+		
+	}
+	
+	public static void main(String[] args) {
+		
+	}
+}

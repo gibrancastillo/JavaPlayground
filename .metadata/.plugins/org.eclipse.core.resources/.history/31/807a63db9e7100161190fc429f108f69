@@ -1,0 +1,21 @@
+package com.ccc.rest;
+
+import javax.ws.rs.ApplicationPath;
+import javax.ws.rs.core.Application;
+
+/**
+ * This is not a REST Web Application, we are not using a web.xml nor a (Jersey) Servlet.  This is just a RESTful Application.
+ * The way we configure and bootstrap the JAX-RS Application (RESTful Application) is by writing a Jersey Servlet in web.xml and this is how
+ * 
+ * 1. Defined an application (not web application) which extends javax.ws.rs.core.Application which tells Jersey that this is a JAX-RS Application
+ * 2. Annotated the application with @ApplicationPath("webapi") which says that any HTTP Request that comes to this RESTful Application that has /webapi/ 
+ *    in the front of the URI is handle by MyApp.class so by default an as specify in javax.ws.rs.core.Application this application looks at every resource
+ *    in with @Path.
+ * 
+ * @author gecasti
+ *
+ */
+@ApplicationPath("webapi")
+public class MyApp extends Application {
+	
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract method &apos;private String getSelfUri(UriInfo uriInfo, Message message)&apos; from &apos;com.ccc.messenger.resources.MessageResource.getMessage()&apos; to &apos;com.ccc.messenger.resources.MessageResource&apos;&#x0D;&#x0A;- Original project: &apos;messenger&apos;&#x0D;&#x0A;- Method name: &apos;getSelfUri&apos;&#x0D;&#x0A;- Destination type: &apos;com.ccc.messenger.resources.MessageResource&apos;&#x0D;&#x0A;- Declared visibility: &apos;private&apos;" comments="false" description="Extract method &apos;getSelfUri&apos;" destination="0" exceptions="false" flags="786434" id="org.eclipse.jdt.ui.extract.method" input="/src\/main\/java&lt;com.ccc.messenger.resources{MessageResource.java" name="getSelfUri" replace="false" selection="11457 380" stamp="1472699081341" version="1.0" visibility="2"/>
+</session>

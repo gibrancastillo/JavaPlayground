@@ -1,0 +1,9 @@
+INDEX VERSION 1.3+C:\Users\gecasti\Documents\GitHub\JavaPlayground\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2164948010.index
+762126280.index
+1294896065.index
+1570312354.index
+2312214913.index
+1149327647.index
+3287683424.index
+399183380.index

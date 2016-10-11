@@ -1,6 +1,5 @@
 package com.ccc.playground;
 
-import javax.swing.RepaintManager;
 
 /**
  * Write a method to replace all spaces in a string with ‘%20’.

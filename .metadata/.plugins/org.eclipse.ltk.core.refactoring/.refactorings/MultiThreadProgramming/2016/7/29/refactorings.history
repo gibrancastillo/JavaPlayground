@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;te1&apos; in &apos;com.ccc.threads.ThreadExecution.main(...)&apos; to &apos;te3&apos;&#x0D;&#x0A;- Original project: &apos;MultiThreadProgramming&apos;&#x0D;&#x0A;- Original element: &apos;com.ccc.threads.ThreadExecution.main(String[]).te1&apos;&#x0D;&#x0A;- Renamed element: &apos;te1&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;te1&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;com.ccc.threads{ThreadExecution.java[ThreadExecution~main~\[QString;@te1!625!668!641!643!QThreadExecution;!0!false" name="te3" references="true" stamp="1468421971266" version="1.0"/>
+</session>

@@ -1,0 +1,5 @@
+package com.ccc.messenger.service;
+
+public class ProfileService {
+
+}

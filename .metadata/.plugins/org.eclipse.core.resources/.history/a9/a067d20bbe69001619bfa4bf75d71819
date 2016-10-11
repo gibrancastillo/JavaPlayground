@@ -1,0 +1,55 @@
+package com.ccc.messenger.resources;
+
+import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
+import javax.ws.rs.HeaderParam;
+import javax.ws.rs.MatrixParam;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+/**
+ * The Jersey Param Annotations:
+ * <> @PathParam goes in the method signature
+ * <> @QueryParam goes in the method signature
+ * <> 
+ * 
+ * @author gecasti
+ *
+ */
+@Path("/injectdemo")
+@Consumes(MediaType.TEXT_PLAIN)
+@Produces(MediaType.TEXT_PLAIN)
+public class InjectDemoResource {
+	
+	@GET
+	@Path("/annotations")
+	public String getParamUsingAnnotations() {
+		return "Testing The Jersey Param Annotations";
+	}
+	
+	/**
+	 * The Matrix Param is utilize in the API URI call using ";" like this http://localhost:8080/messenger/webapi/injectdemo/annotations;param=value
+	 * @param matrixParam
+	 * @return
+	 */
+	@GET
+	@Path("matrixannotation")
+	public String getStringUsingMatrixParam(@MatrixParam("param") String matrixParam) {
+		return "Testing The Jersey Matrix Param Annotation.  Matrix param: " + matrixParam;
+	}
+	
+	@GET
+	@Path("matrixheaderannotation")
+	public String getStringUsingMatrixParam(@MatrixParam("param") String matrixParam,
+											@HeaderParam("customHeaderKey") String headerParam) {
+		return "Testing The Jersey Matrix/Header Param Annotation.  Matrix param: " + matrixParam + "  Header param: " + headerParam;
+	}
+	
+	@GET
+	@Path("headerannotation")
+	public String getStringUsingHeaderParam(@HeaderParam("customHeaderKey") String headerParam) {
+		return "Testing The Jersey Header Param Annotation.  Header param: " + headerParam;
+	}
+}

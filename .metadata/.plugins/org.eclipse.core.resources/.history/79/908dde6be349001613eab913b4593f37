@@ -1,0 +1,7 @@
+package com.ccc.annotationsdemo;
+
+public @interface SimpleNote {
+	// Annotation elements
+	String desc();
+	String author();
+}

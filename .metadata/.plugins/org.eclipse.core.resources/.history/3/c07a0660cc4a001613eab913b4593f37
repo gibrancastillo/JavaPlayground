@@ -1,0 +1,30 @@
+package com.ccc.messenger.dao;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import com.ccc.messenger.model.Message;
+import com.ccc.messenger.model.Profile;
+
+/**
+ * An in memory Map to behave like a database, to support all the CRUD operations.
+ * Create:  POST
+ * Read:    GET
+ * Update:  PUT
+ * Delete:  DELETE
+ * 
+ * @author gecasti
+ *
+ */
+public class DatabaseClass {
+	private static Map<Long, Message> messages = new HashMap<>();
+	private static Map<Long, Profile> profiles = new HashMap<>();
+	
+	public static Map<Long, Message> getMessages() {
+		return messages;
+	}
+	
+	public static Map<Long, Profile> getProfiles() {
+		return profiles;
+	}
+}

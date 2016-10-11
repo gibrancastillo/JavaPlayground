@@ -1,0 +1,30 @@
+package com.ccc.rest;
+
+/**
+ * Param (Annotation) Converters
+ * =============================
+ * Jersey comes with a set of bundled Param Converters that know how to convert to the right data type for some of the native data types; for example, from a String in the URL to a 'long'
+ * or 'int' or 'String' data type.  But let's say you have your own data type that you need convert from String in the URL to your data type so Jersey won't be able to do the conversion,
+ * because Jersey has no idea how to convert from a String to your custom data type.  This is where creating your own Param (Annotation) Converters helps, so you can create your own Param
+ * Converters that handles that conversion.
+ * 
+ * For creating or implementing a Param (Annotations) Converter we need our custom data type that the Param Converter converts from String to your data type.  Sample custom data type:
+ * public class MyDate {
+ *     private int date;
+ *     private int month;
+ *     private int year;
+ * }
+ * 
+ * So I want to convert from a String date to MyDate.  Here are the RESTful Application APIs will be call:
+ * <> http://localhost:8080/advanced-jaxrs-01/webapi/date/{datePathParam}
+ * <> http://localhost:8080/advanced-jaxrs-01/webapi/date/today
+ * <> http://localhost:8080/advanced-jaxrs-01/webapi/date/tomorrow
+ * <> http://localhost:8080/advanced-jaxrs-01/webapi/date/yesterday
+ * 
+ * 
+ * @author gecasti
+ *
+ */
+public class DateResource {
+	
+}

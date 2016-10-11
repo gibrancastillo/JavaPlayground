@@ -1,0 +1,11 @@
+package com.ccc.designpattern;
+
+public class OnlyOne {
+	private static OnlyOne one = new OnlyOne();
+	
+	private OnlyOne() { }
+	
+	public static OnlyOne getInstance() {
+		return one;
+	}
+}

@@ -89,5 +89,7 @@ class WordList {
 		System.out.println("Display every item hash table [array] with the index they are associated with:");
 		
 		separateChainingHashTable.displayTheHashTable();
+		
+		input.close();
 	}
 }

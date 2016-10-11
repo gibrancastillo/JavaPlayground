@@ -1,0 +1,12 @@
+package com.ccc.messenger.resources;
+
+import javax.ws.rs.Consumes;
+import javax.ws.rs.Path;
+
+import com.ccc.messenger.service.ProfileService;
+
+@Path("/profiles")
+@Consumes(MediaType.APPLICATION_JSON)
+public class ProfileResource {
+	private ProfileService profileService = new ProfileService();
+}

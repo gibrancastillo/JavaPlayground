@@ -1,0 +1,211 @@
+package com.ccc.playground.openhash;
+
+import java.util.Arrays;
+
+/**
+ * A Hash Table is just an array couple with a function, which is called the hash function.
+ * The Hash Function takes a piece of data as input [a key] and outputs an integer commonly refer to as a hash value.
+ * The Hash Value maps the input [a key] to a particular index in the hash table [an array].
+ * Initially the hash function is used to determine where in the hash table [an array] to store a given key.  Later you use
+ * the same hash function to determine where in the hash table to search for a given key.
+ * 
+ * When two different inputs or keys hash to the same index in the hash function we have a collision.  Therefore, hashing functions
+ * must include some form of collision resolution policy.  Collision resolution techniques can be broken into two classes: 
+ * 1.  Closed Hashing or Open Addressing:
+ *     There are three common closed hashing or open addressing collision resolution strategies:
+ *     - Linear Probing:  All data go inside the hash table [array], thus a bigger hash table is needed.  Generally the load factor should be below 0.5.
+ *                        If a key hashes to the same index as the previously stored key, it is assigned to the next available slot or index in the hash table.
+ *                        Primary Clustering:  As you can see once a collision occurs, you significantly increase chances that another collision will occur in the same slot.
+ *                        Primary Clustering is a serious drawback to linear probing.  Moreover, worst-case insertion, deletion, and lookup times have devolved to O(n), as
+ *                        the next available slot could have potentially been the last slot in the hash table.
+ *     - Quadratic Probing:  Eliminates primary clustering problem of linear probing.  
+ *     - Double hashing:  A second hash function is used to drive the collision resolution.  We apply a second hash function to x [input key] and probe
+ *                        at a distance.
+ *     
+ *     
+ * 2.  Open Hashing or Separate Chaining: 
+ *     An array of pointers to singly linked list(s). 
+ *     The idea is to keep a singly linked list in each index for all keys that hash to the same hash value [to a particular index].
+ *     The hash table [array] indexes are pointers to the first nodes of the singly linked list. 
+ *     A new node is inserted to the front or head of the singly linked list, which is O(1).
+ *     The worst case lookup time is O(n/k), where k is the size of the hash table.  k is a constant.
+ *     In the real world O(n/k) can be a huge improvement; for example, assume that k is 10.  Would you rather wait 100 seconds or 100/k = 10 seconds.
+ *     
+ *     Advantages:
+ *     - Better space utilization for large items
+ *     - Simple collision handling:  searching a singly linked list.
+ *     - Overflow:  we can store more items than the hash table [array] size.
+ *     - Deletion is quick and easy:  deletion from the singly linked list.
+ *  
+ *  
+ *  Resolving collisions entails one sort of linear search or another, which slows things down considerably.
+ *  Therefore, you'll want to choose a hash function that minimizes the chance of collisions occurring in the first place.
+ *  The following are some properties of good hash functions:
+ *  <> Makes use of all info provided by key, in order to maximize the number of possible hash values.
+ *     For example, if we had two strings, "cat" and "caterpillar", we'd want them to hash to different places on the hash table
+ *     If a hash function only took into account the first one, two, or even three letters of the strings, a collision would occur,
+ *     since both words start wit the same three letters.
+ *  <> Uniformly distributes output across hash table.  In other words, hash values should be spread evenly across the hash table.
+ *     This will reduce the length of a singly linked list should collisions occur in the case of Open Hashing or Separate Chaining.
+ *  <> Maps similar keys to very different hash values.  In other words, your hash function should be capable of generating very
+ *     different hash values for similar keys, making collisions much less likely.
+ *  <> Uses only very fast operations.  Speedy insertion, deletion and lookup; therefore, make sure your hash function uses simple,
+ *     quick operations to minimize run time.
+ *  
+ *  
+ *  Hash Tables are NOT efficient in operations that require any ordering information among elements [slots or indexes], such
+ *  as findMin, findMax and printing the entire hash table in sorted order.
+ *  
+ *  
+ *  This class implements a Hash Table [array] that uses a Open Hashing or Separate Chaining collision resolution policy.
+ * 
+ * @author Gibran E. Castillo
+ *
+ */
+public class SeparateChainingHashFunction {
+	int arraySize;
+	WordList[] theHashTableArray;
+	int itemsInArray = 0;
+	
+	// A mini dictionary
+	public String[][] elementsToAdd = {
+			{ "ace", "Very good" },
+			{ "act", "Take action" },
+			{ "add", "Join (something) to something else" },
+			{ "age", "Grow old" },
+			{ "ago", "Before the present" },
+			{ "aid", "Help, assist, or support" },
+			{ "aim", "Point or direct" },
+			{ "air", "Invisible gaseous substance" },
+			{ "all", "Used to refer to the whole quantity" },
+			{ "amp", "Unit of measure for the strength of an electrical current" },
+			{ "and", "Used to connect words" }, { "ant", "A small insect" },
+			{ "any", "Used to refer to one or some of a thing" },
+			{ "ape", "A large primate" },
+			{ "apt", "Appropriate or suitable in the circumstances" },
+			{ "arc", "A part of the circumference of a curve" },
+			{ "are", "Unit of measure, equal to 100 square meters" },
+			{ "ark", "The ship built by Noah" },
+			{ "arm", "Two upper limbs of the human body" },
+			{ "art", "Expression or application of human creative skill" },
+			{ "ash", "Powdery residue left after the burning" },
+			{ "ask", "Say something in order to obtain information" },
+			{ "asp", "Small southern European viper" },
+			{ "ass", "Hoofed mammal" },
+			{ "ate", "To put (food) into the mouth and swallow it" },
+			{ "atm", "Unit of pressure" },
+			{ "awe", "A feeling of reverential respect" },
+			{ "axe", "Edge tool with a heavy bladed head" },
+			{ "aye", "An affirmative answer" } };
+	
+	/**
+	 * 
+	 * @param arraySize
+	 */
+	SeparateChainingHashFunction(int arraySize) {
+		this.arraySize = arraySize;
+		this.theHashTableArray = new WordList[arraySize];
+		
+		// Fill each slot or element in the hash table [array] with a WordLists [a singly linked list].
+		for(int i = 0; i < this.arraySize; i++) {
+			this.theHashTableArray[i] = new WordList();
+		}
+		
+		//Arrays.fill(this.theHashTableArray, new WordList());
+		addTheArray(elementsToAdd);
+	}
+	
+	/**
+	 * A good hash function qualities:
+	 * - Easy to compute:  O(1) to insert, search or delete.
+	 * - Even Distribution:  Lots of slots or elements in the hash table [array].
+	 *                       All keys should be uniformly and evenly distributed in the hash table [array].
+	 * - Less Collision:  Load Factor equals ratio of number of elements (N) in a hash table [array] to the hash table size (T).
+	 *                    N = number of keys or input values
+	 *                    T = hash table [array] size
+	 *                    Load Factor = N/T
+	 *                    Example:  N: 100  T: 10; therefore, Load Factor = 100/10 = 10.  That means each index in the hash table
+	 *                    will has a singly linked list with ten nodes each.
+	 * 
+	 * For Strings, you need to take their ASCII value.
+	 * 
+	 * This could be used to make a dictionary, spell checker, auto completion tool, etc.
+	 * 
+	 * @param wordToHash
+	 */
+	public int stringHashFunction(String wordToHash) {
+		int hashKeyValue = 0;
+		
+		System.out.println("wordToHash or piece of input [key]: " + wordToHash);
+		
+		for(int i = 0; i < wordToHash.length(); i++) {
+			// 'a' has the ASCII character code of 97 so subtract 96 to make our letters start at 1.
+			int charCode = wordToHash.charAt(i) - 96;
+			int hkVTemp = hashKeyValue;
+			
+			// Calculate the hash key using the 26 letters in the alphabet a-z plus blank.
+			hashKeyValue = (hashKeyValue * 27 + charCode) % this.arraySize;
+			
+			System.out.println("Hash Key Value " + hkVTemp + " * 27 + Character Code " + charCode + " % arraySize " + this.arraySize + " = " + hashKeyValue);
+		}
+		
+		// The Hash Value maps the input [a key] to a particular index in the hash table [an array].
+		System.out.println("hashKeyValue or an integer commonly refer to as a hash value: " + hashKeyValue);
+		System.out.println();
+		
+		return hashKeyValue;
+	}
+	
+	public void insert(Word wordToInsert) {
+		String wordToHash = wordToInsert.theWord;
+		
+		// Calculate the hashKey for the Word
+		int hashKey = stringHashFunction(wordToHash);
+		
+		// Add the new word to the hash table [array] and set the key for the Word
+		theHashTableArray[hashKey].insert(wordToInsert, hashKey);
+	}
+	
+	public Word find(String wordToFind) {
+		// Calculate the hash key for the word
+		int hashKey = stringHashFunction(wordToFind);
+		
+		// NEW
+		Word theWord = theHashTableArray[hashKey].find(hashKey, wordToFind);
+		
+		return theWord;
+	}
+	
+	public void addTheArray(String[][] elementsToAdd) {
+		for(int i = 0; i < elementsToAdd.length; i++) {
+			String word = elementsToAdd[i][0]; // Rows
+			String definition = elementsToAdd[i][1]; // Columns
+			
+			// Create the Word with the word name and definition
+			Word newWord = new Word(word, definition);
+			
+			// Add the new Word to the Hash Table array
+			insert(newWord);
+		}
+	}
+	
+	/*public void displayTheHashTable() {
+		for(int i = 0; i < arraySize; i++) {
+			System.out.println("theHashTableArray Index " + i);
+			
+			theHashTableArray[i].displayWordList();
+		}
+	}*/
+	
+	public void displayTheHashTable() {
+		System.out.println("index  Word Singly Linked List");
+		
+		for(int i = 0; i < arraySize; i++) {
+			System.out.print(" " + i + " --> ");
+			
+			theHashTableArray[i].displayWordList();
+			
+			System.out.println();
+		}
+	}
+}

@@ -1,0 +1,8 @@
+package com.ccc.messenger.service;
+
+public class MessageService {
+	
+	public List<Message> getAllMessages() {
+		
+	}
+}

@@ -1,0 +1,41 @@
+package com.ccc.annotationsdemo;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Target;
+
+/**
+ * Annotations by default are made available to classes, methods, parameters, constructors, Enums, Interfaces and all the other programming element types.
+ * To restrict annotations to just classes or methods, you have to use the annotation java.lang.annotation.Target within your annotation
+ * 
+ * @author gecasti
+ *
+ */
+@Target({ElementType.METHOD, ElementType.TYPE})
+public @interface SimpleNote {
+	/*
+	 * Annotation element types that can be use:
+	 * - Primitive types:  byte, short, int, float, double, char and boolean
+	 * - java.lang.String
+	 * - java.lang.Class
+	 * - Enum type
+	 * - Annotation type
+	 * - Array of any of the above type eg:  String[], int[],...
+	 */
+	
+	String desc();
+	String author() default "Enrique Castillo";
+	
+	int length();
+	String name();
+	String[] skills();
+	Class provider();
+	
+	// Enum type
+	Remark remark();
+	
+	public enum Remark {
+		POOR_CODING, SATISFACTORY, EXCELLENT, INCORRECT, INCOMPLETE
+	};
+	
+	
+}

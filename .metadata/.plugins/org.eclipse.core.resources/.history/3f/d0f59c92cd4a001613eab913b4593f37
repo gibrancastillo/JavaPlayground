@@ -1,0 +1,50 @@
+package com.ccc.messenger.service;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.ccc.messenger.dao.DatabaseClass;
+import com.ccc.messenger.model.Message;
+
+/**
+ * A Service (stub) class to interact with the Data Access class (could use JDBC, JPA, Spring, Hibernate, etc).
+ * 
+ * Using an in memory Map to behave like a database, to support all the CRUD operations.
+ * Create:  POST
+ * Read:    GET
+ * Update:  PUT
+ * Delete:  DELETE
+ * 
+ * @author gecasti
+ *
+ */
+public class MessageService {
+	private Map<Long, Message> messages = DatabaseClass.getMessages();
+	
+	public MessageService() {
+		
+	}
+	
+	public List<Message> getAllMessages() {
+		// Parsing a collection to the ArrayList constructor initialized the List with those elements!
+		return new ArrayList<Message>(messages.values());
+	}
+	
+	public Message getMessage() {
+		return new Message(2L, "Hola Jersey!", "Gibran");
+	}
+	
+	public Message addMessage(Message message) {
+		return new Message(2L, "Hola Jersey!", "Gibran");
+	}
+	
+	public Message updateMessage(Message message) {
+		return new Message(2L, "Hola Jersey!", "Gibran");
+	}
+	
+	public Message removeMessage(long messageId) {
+		return new Message(2L, "Hola Jersey!", "Gibran");
+	}
+}

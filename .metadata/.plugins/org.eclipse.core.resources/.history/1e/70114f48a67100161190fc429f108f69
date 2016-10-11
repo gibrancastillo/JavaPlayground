@@ -1,0 +1,33 @@
+package com.ccc.rest;
+
+import javax.inject.Singleton;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+/**
+ * 'Root' Resource based (not action based) URI class API.  The default Life Cycle of a JAX-RS Resource based class is 'Request Scoped'; therefore, every HTTP Request that
+ * maps to this class results in a new instance of this resource based class.  Request Scope means that the scope of a resource instance is about the request, so a new instance
+ * is created per request and then when the response is sent back or done the resource instance is destroyed.
+ * 
+ * The per request scope or default life cycle can be changed.  You can also have what's called the Singleton case, which is 'Session Scoped'.  With Singleton you can configure a
+ * resource to be created just once and then JAX-RS holds on to that resource instance and utilizes it to handle all request.  To make a resource singleton all you have to do is
+ * annotated with @Singleton.
+ *  
+ * @author gecasti
+ *
+ */
+@Path("test")
+@Singleton
+public class MyResource {
+	private int count;
+	
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	public String testMethod() {
+		count++;
+		
+		return "It works!  This method was called " + count + " time(s)";
+	}
+}

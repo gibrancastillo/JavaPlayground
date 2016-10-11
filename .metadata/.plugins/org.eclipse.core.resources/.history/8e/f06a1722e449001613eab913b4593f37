@@ -1,0 +1,14 @@
+package com.ccc.annotationsdemo;
+
+@SimpleNote(desc="Class to play with annotations", author="Gibran Casatillo")
+public class AnnotationApp {
+	
+	@SimpleNote(desc="Method to play with annotations")
+	public void someMethod(int param1) {
+		
+	}
+	
+	public static void main(String[] args) {
+		
+	}
+}

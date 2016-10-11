@@ -1,7 +1,5 @@
 package com.ccc.playground.openhash;
 
-import java.util.Arrays;
-
 /**
  * A Hash Table is just an array couple with a function, which is called the hash function.
  * The Hash Function takes a piece of data as input [a key] and outputs an integer commonly refer to as a hash value.

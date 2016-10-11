@@ -1,0 +1,13 @@
+package com.ccc.messenger.exception;
+
+import javax.ws.rs.ext.ExceptionMapper;
+
+/**
+ * Every exception in JAX-RS needs to implement the ExceptionMapper interface
+ * 
+ * @author gecasti
+ *
+ */
+public class DataNotFoundExceptionMapper implements ExceptionMapper<DataNotFoundException> {
+	
+}

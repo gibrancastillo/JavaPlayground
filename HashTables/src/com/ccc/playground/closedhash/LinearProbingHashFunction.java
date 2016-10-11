@@ -66,11 +66,11 @@ import java.util.Arrays;
 public class LinearProbingHashFunction {
 	private int arraySize;
 	private String[] theHashTableArray;
-	private int itemsInArray = 0;
+	//private int itemsInArray = 0;
 	
 	public LinearProbingHashFunction(int arraySize) {
 		this.arraySize = arraySize;
-		this.theHashTableArray = new String[arraySize];
+		this.theHashTableArray = new String[this.arraySize];
 		Arrays.fill(this.theHashTableArray, "-1");
 	}
 	

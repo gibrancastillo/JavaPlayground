@@ -1,0 +1,5 @@
+package com.ccc.designpattern;
+
+public class OnlyOne {
+
+}

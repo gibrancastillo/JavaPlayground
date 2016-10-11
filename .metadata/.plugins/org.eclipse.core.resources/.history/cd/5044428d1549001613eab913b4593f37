@@ -1,0 +1,27 @@
+package com.ccc.threads;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ProcessExecution {
+	int total1 = sumOnlyOddNumbers(1, 2, 7, 30, 5, 13, 22);
+	int total2 = sumOnlyOddNumbers(3, 20, 77, 4);
+	
+	public int sumOnlyOddNumbers(int ... numbers)
+	
+	public void testMethod() {
+		for(int i = 1; i <= 10; i++) {
+			System.out.println("i value: " + i);
+		}
+	}
+	
+	public static void main(String[] args) {
+		ProcessExecution pe1 = new ProcessExecution();
+		pe1.testMethod();
+		pe1.testMethod();
+		pe1.testMethod();
+		
+		List<String> list = new ArrayList<String>();
+		list.add(new Integer(2));
+	}
+}

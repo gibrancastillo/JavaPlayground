@@ -1,0 +1,45 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.ccc</groupId>
+  <artifactId>advanced-jaxrs-01</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>advanced-jaxrs-01 Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  
+  <dependencies>
+  	<!-- Jersey Dependency -->
+  	<dependency>
+  		<groupId>org.glassfish.jersey.bundles</groupId>
+  		<artifactId>jaxrs-ri</artifactId>
+  		<version>RELEASE</version>
+  	</dependency>
+  	
+  	<!-- Moxy is the framework that Jersey uses to convert from Java instance to JSON instance and vice versa -->
+  	<dependency>
+  		<groupId>org.glassfish.jersey.media</groupId>
+  		<artifactId>jersey-media-moxy</artifactId>
+  		<version>RELEASE</version>
+  	</dependency>
+  </dependencies>
+  
+  <build>
+  	<finalName>advanced-jaxrs-01</finalName>
+  	<plugins>
+  		<!-- Setting the Java version -->
+  		<!-- This Maven Compiler Plugin forces the Java version to be someting apart from the default (Java 1.5) -->
+  		<plugin>
+  			<groupId>org.apache.maven.plugins</groupId>
+  			<artifactId>maven-compiler-plugin</artifactId>
+  			<version>RELEASE</version>
+  			<inherited>true</inherited>
+  			<configuration>
+  				<source>1.8</source>
+  				<target>1.8</target>
+  			</configuration>
+  		</plugin>
+  	</plugins>
+  </build>
+  
+</project>

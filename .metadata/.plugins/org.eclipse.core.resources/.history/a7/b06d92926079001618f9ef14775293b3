@@ -1,0 +1,11 @@
+package com.ccc.rest.client;
+
+import javax.ws.rs.client.Client;
+
+public class RestApiClient {
+	
+	public static void main(String[] args) {
+		// JAX-RS provides javax.ws.rs.client.Client to build and make REST Web Service API calls.
+		Client client;
+	}
+}

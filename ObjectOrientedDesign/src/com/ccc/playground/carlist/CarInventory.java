@@ -40,7 +40,7 @@ public class CarInventory {
 		int year;
 		String make, model, vin;
 		boolean more = true;
-		double speed = 0.0;
+		//double speed = 0.0;
 		Scanner keyboard = new Scanner(System.in);
 		ArrayList<Car> carList = new ArrayList<Car>();
 		
@@ -86,5 +86,7 @@ public class CarInventory {
 		
 		System.out.println("mapCarList= " + mapCarList);
 		System.out.println("mapCarList.get(\"2001SubaruForester\")= " + mapCarList.get("2001SubaruForester"));
+		
+		keyboard.close();
 	}
 }

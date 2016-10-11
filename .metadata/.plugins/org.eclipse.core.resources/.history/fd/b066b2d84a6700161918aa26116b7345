@@ -1,0 +1,44 @@
+package com.ccc.messenger.resources;
+
+import java.util.List;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+import com.ccc.messenger.model.Message;
+import com.ccc.messenger.service.MessageService;
+
+/**
+ * Resource based (not action based) URI class API.  In this case the resource is 'messages'.  The HTTP Methods tell you the operation to be made on the resource.
+ * 
+ * HTTP Request       SQL          Operation   
+ *   Method        Statement
+ * <> POST   --->   INSERT     --> 'C'reate
+ * <> GET    --->   SELECT     --> 'R'ead (Retrieve)
+ * <> PUT    --->   UPDATE     --> 'U'pdate (Modify)
+ * <> DELETE --->   DELETE     --> 'D'elete (Destroy)
+ * 
+ * You can use the HTTP Method POST to perform an update operation; however, the standard practice is to use the HTTP Method PUT.  HTTP Method POST is use for creating a new resource.
+ * The HTTP Method GET is read-only; while POST, PUT and DELETE are write HTTP Methods.
+ * The following are repeatable HTTP Methods:  GET, PUT and DELETE.  The HTTP Method POST cannot be repeated safely.
+ * 
+ * 
+ * A bit uncommon:  HEAD, OPTIONS, etc.
+ * 
+ * @author gecasti
+ *
+ */
+@Path("/messages")
+public class MessageResource {
+	private MessageService messageService = new MessageService();
+	
+	@GET
+	@Produces(MediaType.APPLICATION_XML)
+	public List<Message> getMessages() {
+		return messageService.getAllMessages();
+	}
+	
+	
+}
