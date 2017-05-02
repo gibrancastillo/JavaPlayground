@@ -53,6 +53,6 @@ public class SecuredResource {
 	@Path("message")
 	@Produces(MediaType.TEXT_PLAIN)
 	public String securedMethod() {
-		return "This API needs login";
+		return "This API is secured with Basic Auth";
 	}
 }

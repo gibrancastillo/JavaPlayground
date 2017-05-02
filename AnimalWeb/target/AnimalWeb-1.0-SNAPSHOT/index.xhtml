@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Animal Zoo JSF Web App - Facelet</title>
+    </h:head>
+    <h:body>
+        <h1>My Animal Page</h1>
+        <!-- h:outputLink is use to display normal links in a website, an <a href ...> hyperlink -->
+        <h:outputLink value="http://www.lds.org">
+            Goto LDS
+        </h:outputLink><br/><br/>
+        <h:form prependId="false">
+            <!-- Value binding expression, example ${animalManagedBean.type} -->
+            Animal type: <h:inputText id="animalType" value="${animalManagedBean.type}" /><br/>
+            Animal total no: <h:inputText id="animalTotalNo" value="${animalManagedBean.totalNo}" /><br/>
+            Animal password: <h:inputSecret id="password" value="${animalManagedBean.password}" /><br/>
+            Some Text: <h:inputTextarea rows="5" cols="50" id="textArea" value="#{animalManagedBean.textArea}" /><br/>
+            <h:inputHidden id="hiddenField" /><br/>
+            
+            <h:outputFormat value="{0} is a good {1}.">
+                <f:param value="Gibran" />
+                <f:param value="person" />
+            </h:outputFormat><br/><br/>
+            <h:graphicImage url="/images/sprite.png" /><br/><br/>
+            
+            Do you want to receive mails? <h:selectBooleanCheckbox value="#{animalManagedBean.mailMe}" /><br/><br/>
+            
+            <!-- The check box selected or values selected (itemValue) will be added into the selectedPeople int[] array  -->
+            <h:selectManyCheckbox value="#{animalManagedBean.selectedPeople}">
+                <f:selectItem itemValue="1" itemLabel="Gibran" />
+                <f:selectItem itemValue="2" itemLabel="Enrique" />
+                <f:selectItem itemValue="3" itemLabel="Castillo" />
+                <f:selectItem itemValue="4" itemLabel="Zaldivar" />
+                <f:selectItem itemValue="5" itemLabel="Fernando" />
+            </h:selectManyCheckbox>
+            <br/><br/>
+            
+            <h:selectOneRadio value="#{animalManagedBean.selectedPerson}">
+                <f:selectItem itemValue="1" itemLabel="Gibran" />
+                <f:selectItem itemValue="2" itemLabel="Enrique" />
+                <f:selectItem itemValue="3" itemLabel="Castillo" />
+                <f:selectItem itemValue="4" itemLabel="Zaldivar" />
+                <f:selectItem itemValue="5" itemLabel="Fernando" />
+            </h:selectOneRadio>
+            <br/><br/>
+            
+            <h:selectOneListbox value="#{animalManagedBean.selectedPerson}">
+                <f:selectItem itemValue="1" itemLabel="Gibran" />
+                <f:selectItem itemValue="2" itemLabel="Enrique" />
+                <f:selectItem itemValue="3" itemLabel="Castillo" />
+                <f:selectItem itemValue="4" itemLabel="Zaldivar" />
+                <f:selectItem itemValue="5" itemLabel="Fernando" />
+            </h:selectOneListbox>
+            <br/><br/>
+            
+            <h:selectManyListbox value="#{animalManagedBean.selectedPeople}">
+                <f:selectItem itemValue="1" itemLabel="Gibran" />
+                <f:selectItem itemValue="2" itemLabel="Enrique" />
+                <f:selectItem itemValue="3" itemLabel="Castillo" />
+                <f:selectItem itemValue="4" itemLabel="Zaldivar" />
+                <f:selectItem itemValue="5" itemLabel="Fernando" />
+            </h:selectManyListbox>
+            <br/><br/>
+            
+            <h:selectOneMenu value="#{animalManagedBean.selectedPerson}">
+                <f:selectItem itemValue="1" itemLabel="Gibran" />
+                <f:selectItem itemValue="2" itemLabel="Enrique" />
+                <f:selectItem itemValue="3" itemLabel="Castillo" />
+                <f:selectItem itemValue="4" itemLabel="Zaldivar" />
+                <f:selectItem itemValue="5" itemLabel="Fernando" />
+            </h:selectOneMenu>
+            <br/><br/>
+            
+            <!-- In FireFox you can't select more than one item and h:selectManyMenu is not compatible across web browsers -->
+            <h:selectManyMenu value="#{animalManagedBean.selectedPeople}">
+                <f:selectItem itemValue="1" itemLabel="Gibran" />
+                <f:selectItem itemValue="2" itemLabel="Enrique" />
+                <f:selectItem itemValue="3" itemLabel="Castillo" />
+                <f:selectItem itemValue="4" itemLabel="Zaldivar" />
+                <f:selectItem itemValue="5" itemLabel="Fernando" />
+            </h:selectManyMenu>
+            <br/><br/>
+            
+            Menu options are coming from Database via JSF Managed Bean class 
+            <h:selectOneMenu value="#{animalManagedBean.selectedPerson}">
+                <f:selectItems value='#{animalManagedBean.peopleList}' var='p' itemLabel="#{p.name}" itemValue="#{p.id}" />
+            </h:selectOneMenu>
+            <br/><br/>
+            
+            <!-- Method binding expression, examples animalManagedBean.saveAnimal or animalManagedBean.saveAnimal()
+            EL or Expression Language is use for data binding, Facelets with Java code.  Or you could just mention
+            the page name "show" or "show.xhtml" directly, this is known as implicit navigation
+            <h:commandButton id="submitButton" value="submit" action="{animalManagedBean.saveAnimal()}" /><br/><br/>
+            h:commandLink works just like a h:commandButton with the difference that h:commandLink appears as a link in UI
+            h:commandButton and h:commandLink sends HTTP POST Request and submits surrounding form values -->
+            <h:commandButton id="submitButton" value="Submit value" action="#{animalManagedBean.saveAnimal()}" /><br/><br/>
+            
+            <!-- h:link works just like a h:button with the difference that h:link appears as a link in UI
+            h:button and h:link sends HTTP GET Request and does NOT submit the surrounding form values -->
+            <h:link id="someButton" value="Show me values" outcome="show" /><br/><br/><br/><br/>
+        </h:form>
+        
+        <h:outputText value="#{animalManagedBean.type}" /><br/><br/>
+        <h:outputText value="#{animalManagedBean.totalNo}" /><br/><br/>
+        <h:outputText value="#{animalManagedBean.mailMe}" /><br/><br/>
+        
+        <!-- EL - Expression Language you can use the dot . notation or the bracket [] notation
+        {animalManagedBean.type} or {animalManagedBean['type']}.  The dot . notation is simpler; however, for certain scenarios
+        JSF requires the bracket [] notation.
+        The EL expression does not have to be of just two parts {animalManagedBean.type}, it can have more parts like this one
+        {animalManagedBean.person.name} -->
+        <h:outputText value='#{animalManagedBean.person.name}' /><br/><br/>
+        
+        <!-- Using the bracket [] notation.  Until now we use single objects in the dot . notation
+        What happens if you have a list of objects in a list -->
+        <h:outputText value="#{animalManagedBean.colorList[1]}" /><br/><br/>
+        <h:outputText value="#{animalManagedBean.colorMap['Y']}" /><br/><br/>
+        
+        <!-- Bean Injection.  One bean needs to access another bean. -->
+        <h:outputText value="#{animalManagedBean.mySessionManagedBean.number}" /><br/><br/>
+        <h:outputText value="#{myViewManagedBean.number}" /><br/><br/>
+    </h:body>
+</html>
+

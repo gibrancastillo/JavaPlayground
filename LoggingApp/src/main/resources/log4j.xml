@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration>
+    <!-- Console Apender -->
+    <appender name="consoleAppender" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="conversionPattern" value="%m%n"/>
+        </layout>
+    </appender>
+    <appender name="consoleAppenderPatternLayout" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <!--
+                %C  The fully qualified logger name, the class been logged, example LoggingTrial.class
+                %d{yyyy-MM-dd hh:mm} The specified date in the given format
+                %L  The line number in the source code
+                %M  The method from which the logging message was issue
+                %p  Gives the priority level of message, like ALL, DEBUG, INFO, WARN, ERROR, FATAL or OFF
+                %m  Gives the actual message
+                %n  Is the new line character
+            -->
+            <param name="conversionPattern" value="%C %d{yyyy-MM-dd hh:mm} %L %M %p %m %n"/>
+        </layout>
+    </appender>
+    
+    <!-- Single File Apender -->
+    <appender name="fileAppender" class="org.apache.log4j.FileAppender">
+        <param name="file" value="${user.home}/message.log" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="conversionPattern" value="%m%n"/>
+        </layout>
+    </appender>
+    <appender name="fileAppenderHTMLLayout" class="org.apache.log4j.FileAppender">
+        <param name="file" value="${user.home}/output.html" />
+        <layout class="org.apache.log4j.HTMLLayout">
+            <param name="Title" value="My Log Page"/>
+            <param name="LocationInfo" value="true"/>
+        </layout>
+    </appender>
+    
+    <!-- Rolling File Apender -->
+    <appender name="rollingFileAppender" class="org.apache.log4j.RollingFileAppender">
+        <param name="file" value="${user.home}/message.log" />
+        <param name="maxFileSize" value="100kb" />
+        <param name="maxBackupIndex" value="5" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="conversionPattern" value="%m%n"/>
+        </layout>
+    </appender>
+    
+    <!-- Daily Rolling File Apender, there is weekly and monthly as well -->
+    <appender name="dailyRollingFileAppender" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="${user.home}/message.log" />
+        <param name="datePattern" value=" '.' yyy-MM-dd" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="conversionPattern" value="%m%n"/>
+        </layout>
+    </appender>
+    
+    <!-- Database Apender
+         ZooDB MySQL Database was created in the Database Design video
+         When a Java EE application is running in a cluster environment 
+         then is a good idea to use centralized logging like database logging
+         instead of file logging -->
+    <appender name="jdbcAppender" class="org.apache.log4j.jdbc.JDBCApender">
+        <param name="URL" value="jdbc:mysql://localhost:3306/zoodb?zeroDateTimeBehavior=convertToNull" />
+        <param name="driver" value="com.mysql.jdbc.Driver" />
+        <param name="user" value="root" />
+        <param name="password" value="mysql" />
+        <param name="sql" value="INSERT INTO logger VALUES('%d{yyyy-MM-dd}','%C','%p','%m')" />
+    </appender>
+    
+    <!-- Custom Logger -->
+    <logger name="com.ccc" additivity="false">
+        <level value="debug"/>
+        <appender-ref ref="fileAppenderHTMLLayout"/>
+    </logger>
+    
+    <!-- Root Looger
+    <root>
+        <priority value="debug" />
+        <appender-ref ref="consoleApender" />
+    </root> -->
+    
+</log4j:configuration>
