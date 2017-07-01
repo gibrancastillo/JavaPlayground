@@ -1,0 +1,114 @@
+package com.ccc.ht.openhashing;
+
+import java.util.Scanner;
+
+/**
+ * The Linked Stack implementation is a simplified version of the Linked List implementation.
+ * Elements or nodes are inserted (push) and removed (pop) only from the head of the list (first link or node).
+ * The header node is not used because no special case code is required for lists of zero or one elements.
+ * 
+ * A Singly Linked Stack List that will be reference in the indices in the hash table [array].
+ * 
+ * The freelist is an example of a linked stack.  A freelist holds those list nodes that are not currently used.
+ * When a node (link or element) is deleted from a linked list, it is placed at the head of the freelist.
+ * When a new element is to be added to a linked list, the freelist is checked to see if a list node is available.
+ * If so, the node is take from the freelist.  If the freelist is empty, or does not have the node you are looking
+ * for the standard new operator can still be called.
+ * 
+ * @author gecasti
+ *
+ */
+public class WordList {
+	// Reference to first Link in list (head).  The last Link added to the LinkedList
+	public Word firstWord = null;
+	
+	/**
+	 * ====================================================================================================================================
+	 * Clustering - once a collision occurs, you significally increase chances that another collision will occurs in the same slot or area
+	 *              This tendency of linear probing to cluster items together is known as Primary Clustering.
+	 *              Another technique that eliminates primary clustering is called Quadratic Probing
+	 *              
+	 * Ordering the Linked List by key value provides an advantage in the case of an unsuccessful search, since we know to stop searching
+	 * the list once we encounter a key that is greater than the one being searched for.  If records on the list are unordered or ordered
+	 * by frequency, then an unsuccessful search will need to visit every record on the list.
+	 * 
+     * Open Hashing (separate chaining) is most appropriate when the hash table is kept in main memory, implemented with a standard in-memory
+	 * linked list.  Storing an open hash table on disk in an efficient way is difficult, since members of a given linked list may be stored
+	 * on different disk blocks.  This would result in multiple disk accesses when searching for a particular key value, which defeats
+	 * the purpose of using hashing.
+	 * ====================================================================================================================================
+	 * 
+	 * @param hashKey
+	 * @param newWord
+	 */
+	public void insert(int hashKey, Word newWord) {
+		Word previous = null;
+		Word current = firstWord;
+		newWord.key = hashKey;
+		
+		while(current != null && newWord.key > current.key) {
+			// inserting new Words or nodes in order by key value in the singly linked stack list
+			previous = current;
+			current = current.next;
+		}
+		
+		if(previous == null)
+			firstWord = newWord;
+		else
+			previous.next = newWord;
+		
+		newWord.next = current;
+	}
+	
+	public Word find(int hashKey, String wordToFind) {
+		Word current = firstWord;
+		
+		// Search for key, but stop searching if the hashKey < what we are searching for
+		// Because the list is sorted this allows us to avoid searching the whole list
+		while(current != null && current.key <= hashKey) {
+			// NEW
+			if(current.theWord.equals(wordToFind))
+				return current;
+			
+			current = current.next;
+		}
+		
+		return null;
+	}
+	
+	/*public void displayWordList() {
+		Word current = firstWord;
+		
+		while(current != null) {
+			System.out.println(current);
+			current = current.next;
+		}
+	}*/
+	
+	public void displayWordList() {
+		Word current = firstWord;
+		
+		while(current != null) {
+			System.out.print(current + " -> ");
+			current = current.next;
+		}
+	}
+	
+	public static void main(String[] args) {
+		// Make a 11 item array that will hold words and definitions
+		SeparateChaining wordHashTable = new SeparateChaining(11);
+		String wordLookUp = "a";
+		
+		// Keep retrieve requests until x is entered
+		while(!wordLookUp.equalsIgnoreCase("x")) {
+			System.out.println(": ");
+			wordLookUp = new Scanner(System.in).nextLine();
+
+			// Look for the word requested and print it out to screen
+			System.out.println(wordHashTable.find(wordLookUp));
+		}
+		
+		// Display every item in the array with the index they are associated with
+		wordHashTable.displayTheHashTable();
+	}
+}

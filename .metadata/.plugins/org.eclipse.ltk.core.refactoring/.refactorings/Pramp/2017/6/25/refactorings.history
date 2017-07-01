@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.ccc.pramp.SalesPath&apos; to &apos;SalesPathTree&apos;&#x0D;&#x0A;- Original project: &apos;Pramp&apos;&#x0D;&#x0A;- Original element: &apos;com.ccc.pramp.SalesPath&apos;&#x0D;&#x0A;- Renamed element: &apos;com.ccc.pramp.SalesPathTree&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;SalesPath&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.ccc.pramp{SalesPath.java[SalesPath" matchStrategy="1" name="SalesPathTree" qualified="false" references="true" similarDeclarations="false" stamp="1497973027023" textual="false" version="1.0"/>
+</session>

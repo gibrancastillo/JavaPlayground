@@ -57,13 +57,10 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
-			<item value="com.ccc.advanced_jaxrs"/>
 		</list>
 		<list key="groupId">
-			<item value="com.ccc"/>
 		</list>
 		<list key="artifactId">
-			<item value="advanced-jaxrs-01"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

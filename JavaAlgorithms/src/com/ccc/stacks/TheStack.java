@@ -4,17 +4,33 @@ import java.util.Arrays;
 
 /**
  * Stacks are used to complete a task and are soon after discarded
+ * 
  * Stacks
  * 1. Allow only a single item to be added or removed at a time
  * 2. Stacks allow access to the last item inserted (LIFO:  Last In First Out)
+ * 
+ * This is an Array-Based Stack implementation, which is essentially a simplified
+ * version of the array-based list.  The only important decision to be made is which
+ * end of the array should represent the top of the stack.
+ * <> One choice is to make the top be at position (index) 0 in the array.  In terms
+ *    of array-based list functions, all insert (push) and remove (pop) operations would
+ *    then be on the element in position (index) 0.  This implementation is inefficient,
+ *    since now every push (insert) or pop (remove) operation will require that all 
+ *    elements currently in the stack be shifted one position in the array, for a cost
+ *    of O(n) if there are n elements.
+ *<> The other choice is to have the top element be at position (index) n - 1 when there
+ *   are n elements in the stack.  In other words, as elements are pushed (inserted) onto
+ *   the stack, they are appended to the tail of the array-based list.  Member pop removes
+ *   the tail element.  In this case, the cost for each push or pop operation is only O(1).
+ *   <<< This is what was implemented in this array-based stack >>>
  * 
  * @author gecasti
  *
  */
 public class TheStack {
-	private String[] stackArray;
-	private int stackSize;
-	private int topOfStack = -1; //Sets stack as empty
+	private String[] stackArray; // holds the items
+	private int stackSize;       // number of items in stack, capacity.
+	private int topOfStack = -1; // Sets stack String array elements as empty space
 	
 	TheStack(int size) {
 		stackSize = size;
@@ -27,6 +43,14 @@ public class TheStack {
 		Arrays.fill(stackArray, "-1");
 	}
 	
+	public boolean isEmpty() {
+		return topOfStack < 0; 
+	}
+	
+	public boolean isFull() {
+		return topOfStack == stackSize;
+	}
+	
 	/**
 	 * To add (insert) or push a value to the top of the stack
 	 * @param input
@@ -36,7 +60,7 @@ public class TheStack {
 		if(topOfStack + 1 < stackSize) {
 			topOfStack++;
 			stackArray[topOfStack] = input;
-		} else System.out.println("Sorry But the Stack is Full");
+		} else System.out.println("Sorry But the Stack is Full, avoid Stack Overflow.");
 		
 		displayTheStack();
 		
@@ -104,17 +128,18 @@ public class TheStack {
 	}
 	
 	public void displayTheStack() {
-		for(int n = 0; n < 61; n++)System.out.print("-");
+		for(int n = 0; n < 61; n++)
+			System.out.print("-");
 		
 		System.out.println();
 		
-		for(int n = 0; n < stackSize; n++) {
-			System.out.format("| %2s "+ " ", n);
-		}
+		for(int n = 0; n < stackSize; n++)
+			System.out.format("| %2s " + " ", n);
 		
 		System.out.println("|");
 		
-		for(int n = 0; n < 61; n++)System.out.print("-");
+		for(int n = 0; n < 61; n++)
+			System.out.print("-");
 		
 		System.out.println();
 		
@@ -125,7 +150,8 @@ public class TheStack {
 		
 		System.out.println("|");
 		
-		for(int n = 0; n < 61; n++)System.out.print("-");
+		for(int n = 0; n < 61; n++)
+			System.out.print("-");
 		
 		System.out.println();
 	}

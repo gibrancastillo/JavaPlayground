@@ -1,5 +1,0 @@
-package com.ccc.messenger.resources.beans;
-
-public class MessageFilterBean {
-
-}

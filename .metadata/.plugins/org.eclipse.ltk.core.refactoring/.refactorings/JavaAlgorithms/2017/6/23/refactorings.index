@@ -1,0 +1,11 @@
+1497126905018	Rename local variable 'n'
+1497126925517	Rename local variable 'x'
+1497126956587	Rename local variable 'A'
+1497129490372	Rename method 'circularArraySearch'
+1497132070952	Rename type 'JavaAlgorithms'
+1497132710463	Delete element
+1497132788721	Rename type 'ArrayStructure'
+1497132814624	Move compilation unit
+1497132837326	Rename type 'AlgorithmsView'
+1497132857924	Rename type 'AlgorithmsMVC'
+1497132875343	Rename type 'AlgorithmsController'

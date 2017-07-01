@@ -1,7 +1,0 @@
-package com.ccc.rest;
-
-public class MyDate {
-	private int date;
-	private int month;
-	private int year;
-}

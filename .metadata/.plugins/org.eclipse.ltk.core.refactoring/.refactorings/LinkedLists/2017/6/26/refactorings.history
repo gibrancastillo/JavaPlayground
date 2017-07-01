@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 elements to &apos;JavaAlgorithms/src/com.ccc.arraylist&apos;&#x0D;&#x0A;- Original project: &apos;LinkedLists&apos;&#x0D;&#x0A;- Destination element: &apos;JavaAlgorithms/src/com.ccc.arraylist&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     com.ccc.playground.array.ArrayList.java&#x0D;&#x0A;     com.ccc.playground.array.List.java" description="Copy compilation units" destination="=JavaAlgorithms/src&lt;com.ccc.arraylist" element1="/src&lt;com.ccc.playground.array{ArrayList.java" element2="/src&lt;com.ccc.playground.array{List.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1498746732228" units="2" version="1.0"/>
+</session>

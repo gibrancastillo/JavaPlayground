@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			var grid = [
+				[5,3,0,0,7,0,0,0,0],
+				[6,0,0,1,9,5,0,0,0],
+				[0,9,8,0,0,0,0,6,0],
+				[8,0,0,0,6,0,0,0,3],
+				[4,0,0,8,0,3,0,0,1],
+				[7,0,0,0,2,0,0,0,6],
+				[0,6,0,0,0,0,2,8,0],
+				[0,0,0,4,1,9,0,0,5],
+				[0,0,0,0,8,0,0,7,9]
+			];
+			
+			/* Takes a partially filled-in grid and attempts to assign values to all unassigned locations in such a way to meet the requirements for Sudoku solution (non-duplication across rows, columns, and boxes) */
+			function solveSudoku(grid, row, col) {
+					var cell = findUnassignedLocation(grid, row, col);
+					row = cell[0];
+					col = cell[1];
+
+					// base case: if no empty cell  
+					if (row == -1) {
+							//console.log("solved");
+							document.getElementById("solvedstatus").innerHTML = 'Solved';
+							return true;
+					} else {
+						document.getElementById("solvedstatus").innerHTML = 'Un-Solved';
+					}
+					
+					for (var num = 1; num <= 9; num++) {
+
+							if ( noConflicts(grid, row, col, num) ) {   
+									grid[row][col] = num;
+
+									if ( solveSudoku(grid, row, col) ) {                
+											return true;
+									}
+
+									// mark cell as empty (with 0)    
+									grid[row][col] = 0;
+							}
+					}
+
+					// trigger back tracking
+					return false;
+			}
+			
+			/* Searches the grid to find an entry that is still unassigned. If found, the reference parameters row, col will be set the location that is unassigned, and true is returned. If no unassigned entries remain, false is returned. */
+			function findUnassignedLocation(grid, row, col) {
+					var done = false;
+					var res = [-1, -1];
+
+					while (!done) {
+							if (row == 9) {
+									done = true;
+							}
+							else {
+									if (grid[row][col] == 0) {
+											res[0] = row;
+											res[1] = col;
+											done = true;
+									}
+									else {
+											if (col < 8) {
+													col++;
+											}
+											else {
+													row++;
+													col = 0;
+											}
+									}
+							}
+					}
+
+					return res;
+			}
+			
+		/* Returns a boolean which indicates whether it will be legal to assign num to the given row,col location. */
+		function noConflicts(grid, row, col, num) {
+				return isRowOk(grid, row, num) && isColOk(grid, col, num) && isBoxOk(grid, row, col, num);
+		}
+		/* Returns a boolean which indicates whether any assigned entry in the specified row matches the given number. */
+		function isRowOk(grid, row, num) {
+				for (var col = 0; col < 9; col++)
+						if (grid[row][col] == num)
+								return false;
+
+				return true;
+		}
+		
+		/* Returns a boolean which indicates whether any assigned entry in the specified column matches the given number. */
+		function isColOk(grid, col, num) {
+				for (var row = 0; row < 9; row++)
+				if (grid[row][col] == num)
+						return false;
+
+				return true;    
+		}
+		/* Returns a boolean which indicates whether any assigned entry within the specified 3x3 box matches the given number. */
+		function isBoxOk(grid, row, col, num) {
+				row = Math.floor(row / 3) * 3;
+		col = Math.floor(col / 3) * 3;
+
+				for (var r = 0; r < 3; r++)
+						for (var c = 0; c < 3; c++)
+								if (grid[row + r][col + c] == num)
+										return false;
+
+				return true;
+		}
+		/* A utility function to print grid */
+		function printGrid(grid, type) {
+			var res = "";
+			for (var i = 0; i < 9; i++) {
+					for (var j = 0; j < 9; j++) {
+							res += '\t\t' + grid[i][j];                
+					}
+					res += "<br>";
+			}
+			if (type == 1)
+				document.getElementById("sudokugrid").innerHTML = String(res);
+			else
+				document.getElementById("solvedgrid").innerHTML = String(res);
+		}
+		/* Render Unsolved Grid */
+		function renderGrid() {
+			printGrid(grid, 1);
+		}
+		/* Render solved Status */
+		function solvestatus() {
+			solveSudoku(grid, 0, 0);
+		}
+		/* Render Solved Grid */
+		function solvedgrid() {
+			printGrid(grid, 2);
+		}
+</script>
+	</head>
+<body>
+	<h2>Sudoku Solver</h2>
+	<table border=1>
+		<tr>
+			<td width="40%">
+				<div class="rows">
+						
+						<div><button value="Render Grid" onclick="renderGrid();">Render Unsolved Grid</button></div>
+					</div>
+				</td>
+			<td width="20%">
+				<div class="rows">
+					
+					<div><button value="Render Grid" onclick="solvestatus();">Solve status</button></div>
+					</div>
+			</td>
+			<td width="40%">
+				<div class="rows">
+					
+					<div><button value="Render Grid" onclick="solvedgrid();">Solved Grid</button></div>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td><div id="sudokugrid"></td>
+			<td><div id="solvedstatus"></div>	</td>
+			<td><div id="solvedgrid"></div>	</td>
+		</tr>
+	</table>
+</body>
+</html> 

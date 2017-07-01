@@ -1,5 +1,0 @@
-package com.ccc.rest.filters;
-
-public class SecurityFilter {
-	
-}

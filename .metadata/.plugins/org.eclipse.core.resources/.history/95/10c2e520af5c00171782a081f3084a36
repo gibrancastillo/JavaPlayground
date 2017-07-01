@@ -1,0 +1,207 @@
+package com.ccc.ht.openhashing;
+
+/**
+ * A Hash Table data structure with a hashing function that handles collisions with Separate Chaining using <<< an array linked list >>>.
+ * 
+ * Hashing - The process of accessing a record by mapping a key value to a position in the table
+ * 
+ * Hash Function - The function that maps key values to positions in the table, a non-negative integer value called a hash code.
+ * A good hash function minimizes the chance of collisions occurring in the first place.  A good hash function will have the following properties:
+ * 1. Efficiently computable, use only very fast operations.
+ * 2. Make use of all info provided by key, thus maximizing the number of possible hash values
+ * 3. Maps similar keys to very different hash values (Generate very different hash codes for very similar data)
+ * 4. Hash values should uniformly distribute the keys (Each table position equally likely for each key) across table. 
+ * 
+ * Hash Table - The array that holds the records.  Combine the random access ability of an array with the dynamism of a linked list.
+ *              The trade-off is that hash tables are not great at ordering or sorting data, but if we don't care about that, then
+ *              we're good to go!
+ * Slots - A position (index) in the hash table.
+ * 
+ * Separate Chaining - Also called Open Hashing, the idea is to make each position or slot in the hash table point to
+ *                     a linked list of records that have same hash function value.  Therefore, the worst lookup time is O(n/k) where
+ *                     n is the number of elements in linked list and k is the size of the hash table.  But since k is a constant the
+ *                     time complexity is just O(n) which is the worst case lookup time for a linked list, theoretically perspective.
+ *                     In the real world O(n/k) can be a huge improvement; for instance, assume that k = 10, would you rather 100 seconds
+ *                     or 100/k = 10 seconds for Microsoft Word to finish spell checking your document.
+ * 
+ * If we think of a Hash Table as an array then a hash function is used to generate a unique key for every item in the array.
+ * The position the item goes in is known as the slot. Hashing doesn't work very well in situations in which duplicate data is stored.
+ * Also it isn't good for searching for anything except a specific key. However, a Hash Table is a data structure that offers fast
+ * insertion, deletion and searching capabilities.
+ * 
+ * From the String key you get the hash code (a.k.a hash value), from the hash code you get the index in the array.
+ * 
+ * ====================================================================================================================================
+ * Clustering - once a collision occurs, you significally increase chances that another collision will occurs in the same slot or area
+ *              This tendency of linear probing to cluster items together is known as Primary Clustering.
+ *              Another technique that eliminates primary clustering is called Quadratic Probing
+ *              
+ * Ordering the Linked List by key value provides an advantage in the case of an unsuccessful search, since we know to stop searching
+ * the list once we encounter a key that is greater than the one being searched for.  If records on the list are unordered or ordered
+ * by frequency, then an unsuccessful search will need to visit every record on the list.
+ * 
+ * Open Hashing (separate chaining) is most appropriate when the hash table is kept in main memory, implemented with a standard in-memory
+ * linked list.  Storing an open hash table on disk in an efficient way is difficult, since members of a given linked list may be stored
+ * on different disk blocks.  This would result in multiple disk accesses when searching for a particular key value, which defeats
+ * the purpose of using hashing.
+ * ====================================================================================================================================
+ * 
+ * Time Complexity
+ * A good hash table and a good hash function gives you a constant time O(1) but
+ * linear time O(n) in the worst case scenario (lost of collisions, etc)
+ * 
+ * @author gecasti
+ *
+ */
+public class SeparateChaining {
+	int arraySize;
+	WordList[] theHashTableArray;
+	int itemsInArray = 0;
+	
+	// A mini dictionary
+	public String[][] elementsToAdd = {
+			{ "ace", "Very good" },
+			{ "act", "Take action" },
+			{ "add", "Join (something) to something else" },
+			{ "age", "Grow old" },
+			{ "ago", "Before the present" },
+			{ "aid", "Help, assist, or support" },
+			{ "aim", "Point or direct" },
+			{ "air", "Invisible gaseous substance" },
+			{ "all", "Used to refer to the whole quantity" },
+			{ "amp", "Unit of measure for the strength of an electrical current" },
+			{ "and", "Used to connect words" }, { "ant", "A small insect" },
+			{ "any", "Used to refer to one or some of a thing" },
+			{ "ape", "A large primate" },
+			{ "apt", "Appropriate or suitable in the circumstances" },
+			{ "arc", "A part of the circumference of a curve" },
+			{ "are", "Unit of measure, equal to 100 square meters" },
+			{ "ark", "The ship built by Noah" },
+			{ "arm", "Two upper limbs of the human body" },
+			{ "art", "Expression or application of human creative skill" },
+			{ "ash", "Powdery residue left after the burning" },
+			{ "ask", "Say something in order to obtain information" },
+			{ "asp", "Small southern European viper" },
+			{ "ass", "Hoofed mammal" },
+			{ "ate", "To put (food) into the mouth and swallow it" },
+			{ "atm", "Unit of pressure" },
+			{ "awe", "A feeling of reverential respect" },
+			{ "axe", "Edge tool with a heavy bladed head" },
+			{ "aye", "An affirmative answer" } };
+	
+	/**
+	 * 
+	 * @param arraySize
+	 */
+	SeparateChaining(int arraySize) {
+		this.arraySize = arraySize;
+		this.theHashTableArray = new WordList[arraySize];
+		
+		// Fill each slot or element in the hash table [array] with a WordLists [a singly linked list].
+		for(int i = 0; i < this.arraySize; i++) {
+			this.theHashTableArray[i] = new WordList();
+		}
+		
+		//Arrays.fill(this.theHashTableArray, new WordList());
+		addTheArray(elementsToAdd);
+	}
+	
+	public void addTheArray(String[][] elementsToAdd) {
+		for(int i = 0; i < elementsToAdd.length; i++) {
+			String word = elementsToAdd[i][0]; // Rows
+			String definition = elementsToAdd[i][1]; // Columns
+			
+			// Create the Word with the word name and definition
+			Word newWord = new Word(word, definition);
+			
+			// Add the new Word to the Hash Table array
+			insert(newWord);
+			
+			System.out.println();
+		}
+	}
+	
+	public void insert(Word wordToInsert) {
+		String wordToHash = wordToInsert.theWord;
+		
+		// Calculate the hash code or hash value for the [String] Word, this is the index in the array, no need to convert hash code to index
+		int hashCode = stringHashFunction(wordToHash);
+		
+		System.out.println("[String] Key: " + wordToHash + " --> [int] hash code: " + hashCode + " <--> [int] array-based list index: " + hashCode);
+		
+		// Add the new word to the hash table [array] and set the key for the Word
+		theHashTableArray[hashCode].insert(hashCode, wordToInsert);
+	}
+	
+	public Word find(String wordToFind) {
+		// Calculate the hash code for the word (key)
+		int hashCode = stringHashFunction(wordToFind);
+		
+		// NEW
+		Word theWord = theHashTableArray[hashCode].find(hashCode, wordToFind);
+		
+		System.out.println("[String] Key: " + wordToFind + " --> [int] hash code: " + hashCode + " <--> [int] array-based list index: " + hashCode);
+		
+		return theWord;
+	}
+	
+	/**
+	 * A good hash function qualities:
+	 * - Easy to compute:  O(1) to insert, search or delete.
+	 * - Even Distribution:  Lots of slots or elements in the hash table [array].
+	 *                       All keys should be uniformly and evenly distributed in the hash table [array].
+	 * - Less Collision:  Load Factor equals ratio of number of elements (N) in a hash table [array] to the hash table size (T).
+	 *                    N = number of keys or input values
+	 *                    T = hash table [array] size
+	 *                    Load Factor = N/T
+	 *                    Example:  N: 100  T: 10; therefore, Load Factor = 100/10 = 10.  That means each index in the hash table
+	 *                    will has a singly linked list with ten nodes each.
+	 * 
+	 * For Strings, you need to take their ASCII value.
+	 * 
+	 * This could be used to make a dictionary, spell checker, auto completion tool, etc.
+	 * 
+	 * @param key
+	 */
+	public int stringHashFunction(String key) {
+		int hashCode = 0;
+		
+		System.out.println("wordToHash or piece of input [key]: " + key);
+		
+		for(int i = 0; i < key.length(); i++) {
+			// 'a' has the ASCII character code of 97 so subtract 96 to make our letters start at 1.
+			int charCode = key.charAt(i) - 96;
+			int hkVTemp = hashCode;
+			
+			// Calculate the hash key using the 26 letters in the alphabet a-z plus blank.
+			hashCode = (hashCode * 27 + charCode) % this.arraySize;
+			
+			System.out.println("Hash Key Value " + hkVTemp + " * 27 + Character Code " + charCode + " % arraySize " + this.arraySize + " = " + hashCode);
+		}
+		
+		// The Hash Value maps the input [a key] to a particular index in the hash table [an array].
+		System.out.println("hashKeyValue or an integer commonly refer to as a hash value: " + hashCode);
+		
+		return hashCode;
+	}
+	
+	/*public void displayTheHashTable() {
+		for(int i = 0; i < arraySize; i++) {
+			System.out.println("theHashTableArray Index " + i);
+			
+			theHashTableArray[i].displayWordList();
+		}
+	}*/
+	
+	public void displayTheHashTable() {
+		System.out.println("index  Word Singly Linked List");
+		
+		for(int i = 0; i < arraySize; i++) {
+			System.out.print(" " + i + " --> ");
+			
+			theHashTableArray[i].displayWordList();
+			
+			System.out.println();
+		}
+	}
+}

@@ -1,0 +1,10 @@
+package com.ccc.pramp3;
+
+public class FlattenADictionary {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

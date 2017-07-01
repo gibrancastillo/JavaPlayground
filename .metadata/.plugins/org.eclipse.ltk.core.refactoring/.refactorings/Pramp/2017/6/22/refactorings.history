@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;hm&apos; in &apos;com.ccc.pramp3.FlattenADictionary.main(...)&apos; to &apos;inputDict&apos;&#x0D;&#x0A;- Original project: &apos;Pramp&apos;&#x0D;&#x0A;- Original element: &apos;com.ccc.pramp3.FlattenADictionary.main(String[]).hm&apos;&#x0D;&#x0A;- Renamed element: &apos;hm&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;hm&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;com.ccc.pramp3{FlattenADictionary.java[FlattenADictionary~main~\[QString;@hm!140!196!163!164!QHashMap\&lt;QString;QObject;&gt;;!0!false" name="inputDict" references="true" stamp="1496434941486" version="1.0"/>
+</session>

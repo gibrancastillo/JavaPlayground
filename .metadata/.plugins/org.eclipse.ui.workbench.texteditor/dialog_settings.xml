@@ -6,22 +6,25 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="getMessages" key="selection"/>
+		<item value="isValidSudoku" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="getMessages"/>
-			<item value="compl"/>
-			<item value="jersey-guava"/>
-			<item value="speed"/>
-			<item value="itemsInArray"/>
-			<item value="arraySize"/>
-			<item value="isAnagramSort"/>
-			<item value="server"/>
+			<item value="isValidSudoku"/>
+			<item value="binarySearch"/>
+			<item value="binary"/>
+			<item value="O("/>
+			<item value=","/>
+			<item value="]"/>
+			<item value="["/>
+			<item value="main"/>
 		</list>
 		<list key="replacehistory">
+			<item value=", "/>
+			<item value="}"/>
+			<item value="{"/>
 			<item value="&#x09;&#x09; * [row: "/>
 			<item value="ro"/>
 		</list>
@@ -31,6 +34,6 @@
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 		<item value="380" key="DIALOG_HEIGHT"/>
 		<item value="169" key="DIALOG_Y_ORIGIN"/>
-		<item value="1251" key="DIALOG_X_ORIGIN"/>
+		<item value="1191" key="DIALOG_X_ORIGIN"/>
 	</section>
 </section>

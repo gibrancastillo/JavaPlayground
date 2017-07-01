@@ -1,5 +1,0 @@
-package com.ccc.annotationsdemo;
-
-public @interface SimpleNote {
-
-}

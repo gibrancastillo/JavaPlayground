@@ -1,0 +1,8 @@
+package com.ccc.pramp;
+
+public class SalesPath {
+	
+	public static void main(String[] args) {
+		
+	}
+}

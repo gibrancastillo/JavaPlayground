@@ -1,0 +1,346 @@
+package com.ccc.ht.openhashing;
+
+import java.util.Scanner;
+
+/**
+ * A Hash Table data structure with a hashing function that handles collisions with Separate Chaining using <<< an array linked list >>>.
+ * 
+ * Hashing - The process of accessing a record by mapping a key value to a position in the table
+ * 
+ * Hash Function - The function that maps key values to positions in the table.  A good hash function minimizes the chance of collisions
+ * occurring in the first place.  A good hash function will have the following properties:
+ * 1. Efficiently computable, use only very fast operations.
+ * 2. Make use of all info provided by key, thus maximizing the number of possible hash values
+ * 3 Maps similar keys to very different hash values
+ * 4. Hash values should uniformly distribute the keys (Each table position equally likely for each key) across table. 
+ * 
+ * Hash Table - The array that holds the records
+ * Slots - A position (index) in the hash table.
+ * Separate Chaining - Also called Open Hashing, the idea is to make each position or slot in the hash table point to
+ *                     a linked list of records that have same hash function value.  Therefore, the worst lookup time is O(n/k) where
+ *                     n is the number of elements in linked list and k is the size of the hash table.  But since k is a constant the
+ *                     time complexity is just O(n) which is the worst case lookup time for a linked list, theoretically perspective.
+ *                     In the real world O(n/k) can be a huge improvement; for instance, assume that k = 10, would you rather 100 seconds
+ *                     or 100/k = 10 seconds for Microsoft Word to finish spell checking your document.
+ * 
+ * If we think of a Hash Table as an array then a hash function is used to generate a unique key for every item in the array.
+ * The position the item goes in is known as the slot. Hashing doesn't work very well in situations in which duplicate data is stored.
+ * Also it isn't good for searching for anything except a specific key. However, a Hash Table is a data structure that offers fast
+ * insertion, deletion and searching capabilities.
+ * 
+ * From the String key you get the hash code (a.k.a hash value), from the hash code you get the index in the array.
+ * 
+ * ====================================================================================================================================
+ * Clustering - once a collision occurs, you significally increase chances that another collision will occurs in the same slot or area
+ *              This tendency of linear probing to cluster items together is known as Primary Clustering.
+ *              Another technique that eliminates primary clustering is called Quadratic Probing
+ *              
+ * Quadratic Probing - the ith value in the probe sequence is (h(K) + i^2) mod M.  Thus, the probe function is p(K, i) = i^2 
+ *                     Once again, two keys with different home positions will have diverge probe sequences.
+ *                     
+ * Example:  For a hash table of size M = 101, assume for keys k1 and k2 that h(k1) = 30 and h(k2) = 29.  The probe sequence for k1 is 30,
+ * then 31, then 34, then 39.  The probe sequence for k2 is 29, then 30, then 33, then 38.  Thus, while k2 will probe to k1's home position
+ * as its second choice, the two keys' probe sequence diverge immediately thereafter.
+ * 
+ * Pseudo-random probing p(K, i) = Perm[i - 1] and quadratic probing p(K, i) = i^2 eliminate primary clustering; however, if the hash
+ * function causes a cluster to a particular home position, then the cluster remains under pseudo-random and quadratic probing.  This
+ * problem is called secondary clustering.
+ * 
+ * 
+ * <<< Double Hashing >>> - to avoid secondary clustering, we need to have the probe sequence be a function of the original key value, not the
+ *                  home position.  A simple technique for doing this is to return to linear probing for the probe function, but to have
+ *                  the constant be based on a second hash function.  Thus, the probe sequence would be of the form:  p(K, i) = i * h2(K)
+ * 
+ * Example:  Again, assume a hash table has size M = 101, and that there are three keys k1, k2 and k3 with h(k1) = 30, h(k2) = 29, h(k3) = 30,
+ * h2(k1) = 2, h2(k2) = 5, and h2(k3) = 5.  Then, the probe sequence for k1 will be 30, 32, 34, 36, and so on.  The probe sequence for k2 will
+ * be 28, 33, 38, 43, and so on.  The probe sequence for k3 will be 30, 35, 40, 45, and so on.  Thus, none of the keys share substantial
+ * portions of the same probe sequence.  Of course, if a fourth key k4 has h(k4) = 28 and h2(k4) = 2, then it will follow the same probe
+ * sequence as k1.  Pseudo-random or quadractic probing can be combined with double hashing to solve this problem.
+ * 
+ * A good implementation of double hashing should ensure that all of the probe sequence constants are relatively prime (prime numbers)
+ * to the table size M.  One way is to select M to be a prime number, and have h2 return a value in the range 1 =< h2(K) =< M - 1.
+ * Another way is to set M = 2^m for some value m and let h2 return an odd value between 1 and 2^m.
+ * Using a prime number for the hash table (array) size helps minimize collisions.
+ * ====================================================================================================================================
+ * 
+ * Time Complexity
+ * A good hash table and a good hash function gives you a constant time O(1) but
+ * linear time O(n) in the worst case scenario (lost of collisions, etc)
+ * 
+ * @author gecasti
+ *
+ */
+public class SeparateChaining {
+
+	WordList[] theArray;
+	int arraySize;
+	int itemsInArray = 0;
+
+	public String[][] elementsToAdd = {
+			{ "ace", "Very good" },
+			{ "act", "Take action" },
+			{ "add", "Join (something) to something else" },
+			{ "age", "Grow old" },
+			{ "ago", "Before the present" },
+			{ "aid", "Help, assist, or support" },
+			{ "aim", "Point or direct" },
+			{ "air", "Invisible gaseous substance" },
+			{ "all", "Used to refer to the whole quantity" },
+			{ "amp",
+					"Unit of measure for the strength of an electrical current" },
+			{ "and", "Used to connect words" }, { "ant", "A small insect" },
+			{ "any", "Used to refer to one or some of a thing" },
+			{ "ape", "A large primate" },
+			{ "apt", "Appropriate or suitable in the circumstances" },
+			{ "arc", "A part of the circumference of a curve" },
+			{ "are", "Unit of measure, equal to 100 square meters" },
+			{ "ark", "The ship built by Noah" },
+			{ "arm", "Two upper limbs of the human body" },
+			{ "art", "Expression or application of human creative skill" },
+			{ "ash", "Powdery residue left after the burning" },
+			{ "ask", "Say something in order to obtain information" },
+			{ "asp", "Small southern European viper" },
+			{ "ass", "Hoofed mammal" },
+			{ "ate", "To put (food) into the mouth and swallow it" },
+			{ "atm", "Unit of pressure" },
+			{ "awe", "A feeling of reverential respect" },
+			{ "axe", "Edge tool with a heavy bladed head" },
+			{ "aye", "An affirmative answer" } };
+
+	public int stringHashFunction(String wordToHash) {
+
+		int hashKeyValue = 0;
+
+		for (int i = 0; i < wordToHash.length(); i++) {
+
+			// 'a' has the character code of 97 so subtract
+			// to make our letters start at 1
+
+			int charCode = wordToHash.charAt(i) - 96;
+
+			int hKVTemp = hashKeyValue;
+
+			// Calculate the hash key using the 26 letters
+			// plus blank
+
+			hashKeyValue = (hashKeyValue * 27 + charCode) % arraySize;
+
+			System.out.println("Hash Key Value " + hKVTemp
+					+ " * 27 + Character Code " + charCode + " % arraySize "
+					+ arraySize + " = " + hashKeyValue);
+
+		}
+		System.out.println();
+
+		return hashKeyValue;
+
+	}
+
+	SeparateChaining(int size) {
+
+		arraySize = size;
+
+		theArray = new WordList[size];
+
+		// Fill the array with WordLists
+
+		for (int i = 0; i < arraySize; i++) {
+
+			theArray[i] = new WordList();
+
+		}
+
+		addTheArray(elementsToAdd);
+
+	}
+
+	public void insert(Word newWord) {
+
+		String wordToHash = newWord.theWord;
+
+		// Calculate the hashkey for the Word
+
+		int hashKey = stringHashFunction(wordToHash);
+
+		// Add the new word to the array and set
+		// the key for the word
+
+		theArray[hashKey].insert(newWord, hashKey);
+
+	}
+
+	public Word find(String wordToFind) {
+
+		// Calculate the hash key for the word
+
+		int hashKey = stringHashFunction(wordToFind);
+
+		// NEW
+
+		Word theWord = theArray[hashKey].find(hashKey, wordToFind);
+
+		return theWord;
+
+	}
+
+	public void addTheArray(String[][] elementsToAdd) {
+
+		for (int i = 0; i < elementsToAdd.length; i++) {
+
+			String word = elementsToAdd[i][0];
+			String definition = elementsToAdd[i][1];
+
+			// Create the Word with the word name and
+			// definition
+
+			Word newWord = new Word(word, definition);
+
+			// Add the Word to theArray
+
+			insert(newWord);
+
+		}
+
+	}
+
+	public void displayTheArray() {
+
+		for (int i = 0; i < arraySize; i++) {
+
+			System.out.println("theArray Index " + i);
+
+			theArray[i].displayWordList();
+
+		}
+
+	}
+
+}
+
+class Word {
+
+	public String theWord;
+	public String definition;
+
+	public int key;
+
+	// Reference to next Word made in the WordList
+
+	public Word next;
+
+	public Word(String theWord, String definition) {
+
+		this.theWord = theWord;
+		this.definition = definition;
+
+	}
+
+	public String toString() {
+
+		return theWord + " : " + definition;
+
+	}
+
+}
+
+class WordList {
+
+	// Reference to first Link in list
+	// The last Link added to the LinkedList
+
+	public Word firstWord = null;
+
+	public void insert(Word newWord, int hashKey) {
+
+		Word previous = null;
+		Word current = firstWord;
+
+		newWord.key = hashKey;
+
+		while (current != null && newWord.key > current.key) {
+
+			previous = current;
+			current = current.next;
+
+		}
+
+		if (previous == null)
+			firstWord = newWord;
+
+		else
+			previous.next = newWord;
+
+		newWord.next = current;
+
+	}
+
+	public void displayWordList() {
+
+		Word current = firstWord;
+
+		while (current != null) {
+
+			System.out.println(current);
+			current = current.next;
+
+		}
+
+	}
+
+	public Word find(int hashKey, String wordToFind) {
+
+		Word current = firstWord;
+
+		// Search for key, but stop searching if
+		// the hashKey < what we are searching for
+		// Because the list is sorted this allows
+		// us to avoid searching the whole list
+
+		while (current != null && current.key <= hashKey) {
+
+			// NEW
+
+			if (current.theWord.equals(wordToFind))
+				return current;
+
+			current = current.next;
+
+		}
+
+		return null;
+
+	}
+
+	public static void main(String[] args) {
+
+		Scanner input = new Scanner(System.in);
+
+		// Make a 11 item array that will hold words
+		// and definitions
+
+		SeparateChaining wordHashTable = new SeparateChaining(11);
+
+		String wordLookUp = "a";
+
+		// Keep retrieve requests until x is entered
+
+		while (!wordLookUp.equalsIgnoreCase("x")) {
+
+			System.out.println(": ");
+
+			wordLookUp = input.nextLine();
+
+			// Look for the word requested and print
+			// it out to screen
+
+			System.out.println(wordHashTable.find(wordLookUp));
+
+		}
+
+		// Display every item in the array with
+		// the index they are associated with
+
+		wordHashTable.displayTheArray();
+
+	}
+}

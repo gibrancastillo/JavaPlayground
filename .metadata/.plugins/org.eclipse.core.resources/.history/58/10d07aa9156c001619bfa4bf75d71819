@@ -1,5 +1,0 @@
-package com.ccc.messenger.exception;
-
-public class DataNotFoundException {
-
-}

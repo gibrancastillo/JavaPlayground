@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			function submitHandler() {
+					var encrytedMsg = document.getElementById("encryptedmsg").value;					
+					decrypt(encrytedMsg);
+			}
+			/*
+			*	Descrypt the message
+			*/
+			function decrypt(word){												
+				var decryptedMsg = [];
+				var decryptedMsgAcsii = [];
+				var firstLetterAscii = '';
+				for (var i = 0; i < word.length; i++) {
+					var charater = word.charAt(i);
+					if (i == 0) { //Decrypt First 
+						var acsiiCode = charater.charCodeAt(0);						
+						for(var ch=97; ch<=122; ch++) {
+							var decrytMsg = parseInt(ch) + 1;							
+							for(var chkch=decrytMsg; chkch>=acsiiCode; chkch = chkch - 26) {
+								if (chkch == acsiiCode) {
+									firstLetterAscii = parseInt(acsiiCode);
+									decryptedMsg.push(String.fromCharCode(ch));
+									decryptedMsgAcsii.push(acsiiCode);									
+									break;
+								}	
+							}
+							
+						}
+					} else if (isAlphaOrParen(charater)) {						
+						if(i == 1) { //Decrypt Second Character 
+							var acsiiCode = charater.charCodeAt(0);						
+							for(var ch=97; ch<=122; ch++) {
+								var decrytMsg = parseInt(firstLetterAscii) + parseInt(ch);									
+								for(var chkch=decrytMsg; chkch>=acsiiCode; chkch = chkch - 26) {								
+									if (chkch == acsiiCode) {										
+										decryptedMsg.push(String.fromCharCode(ch));
+										decryptedMsgAcsii.push(decrytMsg);
+										break;
+									}									
+								}
+							}
+							
+						} else { //Decrypt remaining characters.
+							var acsiiCode = charater.charCodeAt(0);							
+							for(var ch=97; ch<=122; ch++) {
+								var prevAsciiVal = decryptedMsgAcsii[i - 1];
+								var decrytMsg = parseInt(prevAsciiVal) + parseInt(ch);								
+								for(var chkch=decrytMsg; chkch>=acsiiCode; chkch = chkch - 26) {
+									if (chkch == acsiiCode) {										
+										decryptedMsg.push(String.fromCharCode(ch));
+										decryptedMsgAcsii.push(decrytMsg);
+										break;
+									}									
+								}
+							}
+						}
+					} else { // Handling the space
+						decryptedMsg.push('');						
+					}
+				}
+				document.getElementById("decryptedmsg").innerHTML = "Decryted : "+decryptedMsg.join('');
+			}
+			
+			//Alphabet check
+			function isAlphaOrParen(str) {				
+				return /^[a-zA-Z()]+$/.test(str);			
+			}
+			
+		</script>
+	</head>
+<body>
+
+<h2>Decrypt Message</h2>
+<div class="rows"> 
+	<label class="control-label">Encrypted Message</label>
+<input type="text" name="message" value="dnotq" id="encryptedmsg" />
+<input type="button" onclick="submitHandler();" value="Decrypt" />
+</div>
+<div class="rows">
+	<div id="decryptedmsg"></div>
+</div>
+</body>
+</html> 
