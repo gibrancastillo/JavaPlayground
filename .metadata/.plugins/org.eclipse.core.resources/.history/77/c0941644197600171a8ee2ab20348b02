@@ -1,0 +1,30 @@
+package com.ccc.dog.door;
+
+public class Remote {
+	/*
+	 * <> Composition is a "has-a". You do composition by having an instance of another class C
+	 * (DogDoor) as a field of your class (Remote), instead of extending class C (DogDoor).
+	 * 
+	 * <> Association is a relationship between two separate classes (Remote and DogDoor) which
+	 * can be of any type say one to one, one to may etc. It joins two entirely separate entities.
+	 * 
+	 * Remote (source class) is associated to the DogDoor (target class) by reference to the door object.
+	 * This means that the source class (Remote), has an attribute called door, of type DogDoor, the target class.
+	 * 
+	 * Multiplicity:  door is not a List but a single DogDoor class; therefore, only one door object.
+	 */
+	private DogDoor door;
+	
+	public Remote(DogDoor door) {
+		this.door = door;
+	}
+	
+	public void pressButton() {
+		System.out.println("Pressing the remote control button...");
+		if (door.isOpen()) {
+			door.close();
+		} else {
+			door.open();
+		}
+	}
+}

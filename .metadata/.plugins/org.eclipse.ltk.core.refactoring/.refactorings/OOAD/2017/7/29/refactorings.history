@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;spec&apos; in &apos;com.ccc.guitars.FindGuitarTester.main(...)&apos; to &apos;guitarSpec&apos;&#x0D;&#x0A;- Original project: &apos;OOAD&apos;&#x0D;&#x0A;- Original element: &apos;com.ccc.guitars.FindGuitarTester.main(String[]).spec&apos;&#x0D;&#x0A;- Renamed element: &apos;spec&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;spec&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;com.ccc.guitars{FindGuitarTester.java[FindGuitarTester~main~\[QString;@spec!706!746!717!720!QGuitarSpec;!0!false" name="guitarSpec" references="true" stamp="1500301146438" version="1.0"/>
+</session>

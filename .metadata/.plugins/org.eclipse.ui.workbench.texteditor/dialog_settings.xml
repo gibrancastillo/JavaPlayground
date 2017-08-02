@@ -6,22 +6,23 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="isValidSudoku" key="selection"/>
+		<item value="Remote" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="remote"/>
+			<item value="door"/>
+			<item value="Remote"/>
 			<item value="isValidSudoku"/>
 			<item value="binarySearch"/>
 			<item value="binary"/>
 			<item value="O("/>
 			<item value=","/>
-			<item value="]"/>
-			<item value="["/>
-			<item value="main"/>
 		</list>
 		<list key="replacehistory">
+			<item value="BarkRecognizer"/>
 			<item value=", "/>
 			<item value="}"/>
 			<item value="{"/>
