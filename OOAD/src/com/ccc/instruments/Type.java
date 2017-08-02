@@ -1,4 +1,4 @@
-package com.ccc.guitars;
+package com.ccc.instruments;
 
 /**
  * An enumerated type that function sort of like constants or the Factory Design Pattern.

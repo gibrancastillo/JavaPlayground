@@ -1,4 +1,4 @@
-package com.ccc.guitars;
+package com.ccc.instruments;
 
 public class Instrument {
 	private String serialNumber;

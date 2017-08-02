@@ -1,4 +1,4 @@
-package com.ccc.guitars;
+package com.ccc.instruments;
 
 /**
  * These are the common properties that can be use for both search request and guitar details.

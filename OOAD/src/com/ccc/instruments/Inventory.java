@@ -1,4 +1,4 @@
-package com.ccc.guitars;
+package com.ccc.instruments;
 
 import java.util.Iterator;
 import java.util.LinkedList;
