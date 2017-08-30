@@ -5,11 +5,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Inventory {
-	private List<Guitar> guitars;
 	private List<Instrument> inventory;
 	
 	public Inventory() {
-		guitars = new LinkedList<Guitar>();
 		inventory = new LinkedList<Instrument>();
 	}
 	
@@ -30,41 +28,12 @@ public class Inventory {
 		return null;
 	}
 	
-	public List<Instrument> search(InstrumentSpec searchSpec) {
-		List<Instrument> matchingInstruments = new LinkedList<Instrument>();
-		
-		for(Iterator<Instrument> i = inventory.iterator(); i.hasNext(); ) {
-			Instrument instrument = i.next();
-			
-			if(instrument.getSpec().matches(searchSpec))
-				matchingInstruments.add(instrument);
-		}
-		
-		return matchingInstruments;
-	}
-	
-	public void addGuitar(String serialNum, double price, GuitarSpec guitarSpec) {
-		Guitar guitar = new Guitar(serialNum, price, guitarSpec);
-		guitars.add(guitar);
-	}
-	
-	public Guitar getGuitar(String serialNum) {
-		for(Iterator<Guitar> i = guitars.iterator(); i.hasNext();) {
-			Guitar guitar = i.next();
-			
-			if(guitar.getSerialNum().equals(serialNum))
-				return guitar;
-		}
-		
-		return null;
-	}
-	
 	/**
-	 * The Inventory class delegates comparisons to the GuitarSpec class.
+	 * The Inventory class delegates comparisons to the InstrumentSpec class.
 	 * 
 	 * <> Delegation is the act of one object forwarding an operation to another object, to be performed on behalf of the first object.
 	 * <> Delegation is when an object (Inventory) needs to perform a certain task, and instead of doing that task directly, it asks
-	 * another object (GuitarSpec) to handle the task (or sometimes just a part of the task).
+	 * another object (InstrumentSpec) to handle the task (or sometimes just a part of the task).
 	 * <> Delegation makes your code more reusable. It also lets each object worry about its own functionality, rather than spreading the
 	 * code that handles a single object’s behavior all throughout your application.
 	 * <> Delegation lets each object worry about equality (or some other task) on its own. This means your objects are more independent
@@ -80,20 +49,20 @@ public class Inventory {
 	 * @param searchSpec
 	 * @return
 	 */
-	public List<Guitar> search(GuitarSpec searchSpec) {
-		List<Guitar> matchingGuitars = new LinkedList<Guitar>();
+	public List<Instrument> search(InstrumentSpec searchSpec) {
+		List<Instrument> matchingInstruments = new LinkedList<Instrument>();
 		
-		for(Iterator<Guitar> i = guitars.iterator(); i.hasNext();) {
-			Guitar guitar = i.next();
+		for(Iterator<Instrument> i = inventory.iterator(); i.hasNext(); ) {
+			Instrument instrument = i.next();
 			
 			/*
-			 * Delegation:  delegate comparing the two GuitarSpec objects to the GuitarSpec class,
+			 * Delegation:  delegate comparing the two InstrumentSpec objects to the InstrumentSpec class,
 			 * instead of the Inventory class handling the comparison directly.
 			 */
-			if(guitar.getGuitarSpec().matches(searchSpec))
-				matchingGuitars.add(guitar);
+			if(instrument.getSpec().matches(searchSpec))
+				matchingInstruments.add(instrument);
 		}
 		
-		return matchingGuitars;
+		return matchingInstruments;
 	}
 }
