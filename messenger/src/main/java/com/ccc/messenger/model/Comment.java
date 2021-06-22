@@ -2,7 +2,7 @@ package com.ccc.messenger.model;
 
 import java.util.Date;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
 /**
  * A model class (object), which is an Entity class

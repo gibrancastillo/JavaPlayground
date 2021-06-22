@@ -22,9 +22,25 @@
 			<attribute name="owner.project.facets" value="jst.web"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_101">
+	<classpathentry kind="lib" path="/Users/gibrancastillo/.m2/repository/org/glassfish/jersey/bundles/jaxrs-ri/2.26/jaxrs-ri-2.26.jar" sourcepath="/Users/gibrancastillo/.m2/repository/org/glassfish/jersey/bundles/jaxrs-ri/2.26/jaxrs-ri-2.26-sources.jar">
 		<attributes>
-			<attribute name="owner.project.facets" value="java"/>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="org.eclipse.jst.component.archivename" value="jaxrs-ri-2.26.jar"/>
+			<attribute name="maven.groupId" value="org.glassfish.jersey.bundles"/>
+			<attribute name="maven.artifactId" value="jaxrs-ri"/>
+			<attribute name="maven.version" value="2.26"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/Users/gibrancastillo/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/3.0.0/jakarta.xml.bind-api-3.0.0.jar" sourcepath="/Users/gibrancastillo/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/3.0.0/jakarta.xml.bind-api-3.0.0-sources.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="org.eclipse.jst.component.archivename" value="jakarta.xml.bind-api-3.0.0.jar"/>
+			<attribute name="maven.groupId" value="jakarta.xml.bind"/>
+			<attribute name="maven.artifactId" value="jakarta.xml.bind-api"/>
+			<attribute name="maven.version" value="3.0.0"/>
+			<attribute name="maven.scope" value="compile"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>

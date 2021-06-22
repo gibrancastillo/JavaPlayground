@@ -6,12 +6,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlTransient;
 
 /**
  * A model class (object), which is an Entity class
- * Annotated this model class with javax.xml.bind.annotation.XmlRootElement so that JAX-RS within Jersey
+ * Annotated this model class with jakarta.xml.bind.annotation.XmlRootElement so that JAX-RS within Jersey
  * will use JAXB (Java Architecture for XML Binding) to convert the Message object to XML and vice versa.
  * JAXB comes bundle with Java Standard Edition
  * 
@@ -33,7 +33,7 @@ import javax.xml.bind.annotation.XmlTransient;
  *   they are available regardless the client wants to use them or not, but if they want them they are there.
  * - The client developer can just pick up the value after the right URI or hyperlink provided in the previous response and makes a subsequent call to those URIs and when the 
  *   subsequent response comes in that will have further hyperlinks or URIs that the client could be interested in, so the process repeats itself again.
- * - If you do this, you don't let the client programmer have to know amd hardcode these URIs in order to interact with the resources and the application state
+ * - If you do this, you don't let the client programmer have to know and hardcode these URIs in order to interact with the resources and the application state
  * - You basically let the hypertext (hyperlinks) or hypermedia in the HTTP Response drive the client's interaction with the application state
  * - The Hypertext or Hypermdia been the driver or the engine of the application, hence making the REST Web Service interaction dynamic so the client does not have construct the URI
  *   because the resource URI is one of the properties in the resource.

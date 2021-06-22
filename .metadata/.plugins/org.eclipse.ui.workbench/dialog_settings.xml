@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="WorkbenchPreferenceDialogSettings">
-		<item value="8" key="DIALOG_Y_ORIGIN"/>
-		<item value="328" key="DIALOG_X_ORIGIN"/>
+		<item key="DIALOG_Y_ORIGIN" value="8"/>
+		<item key="DIALOG_X_ORIGIN" value="328"/>
 	</section>
 	<section name="org.eclipse.ui.preferences.keysPreferencePage">
-		<item value="true" key="actionSetFilter"/>
-		<item value="true" key="uncategorizedFilter"/>
-		<item value="true" key="internalFilter"/>
+		<item key="actionSetFilter" value="true"/>
+		<item key="uncategorizedFilter" value="true"/>
+		<item key="internalFilter" value="true"/>
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
-		<item value="632" key="dialogHeight"/>
-		<item value="1200" key="dialogWidth"/>
+		<item key="dialogHeight" value="632"/>
+		<item key="dialogWidth" value="1200"/>
 		<list key="textEntries">
 		</list>
 		<list key="orderedElements">
@@ -22,16 +22,16 @@
 		</list>
 	</section>
 	<section name="NewWizardAction">
-		<item value="org.eclipse.wst.html.ui.internal.wizard.NewHTMLWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.m2e.core.wizards.Maven2ProjectWizard"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
-			<item value="org.eclipse.wst.web.ui"/>
+			<item value="org.eclipse.m2e"/>
 		</list>
 	</section>
 	<section name="ShowViewDialog">
-		<item value="308" key="DIALOG_WIDTH"/>
-		<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
-		<item value="415" key="DIALOG_HEIGHT"/>
-		<item value="69" key="DIALOG_Y_ORIGIN"/>
-		<item value="483" key="DIALOG_X_ORIGIN"/>
+		<item key="DIALOG_WIDTH" value="308"/>
+		<item key="DIALOG_FONT_NAME" value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande"/>
+		<item key="DIALOG_HEIGHT" value="415"/>
+		<item key="DIALOG_Y_ORIGIN" value="69"/>
+		<item key="DIALOG_X_ORIGIN" value="483"/>
 	</section>
 </section>
