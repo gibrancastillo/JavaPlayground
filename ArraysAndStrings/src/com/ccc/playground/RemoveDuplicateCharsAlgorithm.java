@@ -5,7 +5,7 @@ package com.ccc.playground;
  * NOTE: One or two additional variables are fine. An extra copy of the array is not.
  * First, ask yourself, what does an additional buffer mean?  Can we use an additional array of constant size?
  * 
- * Algorithm—No (Large) Additional Memory:
+ * Algorithmï¿½No (Large) Additional Memory:
  * 1. For each character, check if it is a duplicate of already found characters.
  * 2. Skip duplicate characters and update the non duplicate characters.
  * 
@@ -80,7 +80,7 @@ public class RemoveDuplicateCharsAlgorithm {
 			return;
 		}
 		
-		// Create a boolean array of 256 elements with index 0 to 255 with all the values initialize to false.
+		// Create a boolean array of 256 elements with index 0 to 255 with all the values initialise to false.
 		boolean[] hit = new boolean[256];
 		hit[str[0]] = true;  // first character in the string could be a possible duplicate
 		

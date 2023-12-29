@@ -14,7 +14,7 @@ public class MyClass {
 			return 0;
 		}
 		
-		// Create a primitive integers array of 256 elements with index 0 to 255 with all the values initialize to 0.
+		// Create a primitive integers array of 256 elements with index 0 to 255 with all the values initialise to 0.
 		int[] letters = new int[256];
 		
 		int num_unique_chars = 0;
@@ -52,7 +52,7 @@ public class MyClass {
 				++num_completed_t;
 				
 				if(num_completed_t == num_unique_chars) {
-					// it’s a match if t has been processed completely
+					// itï¿½s a match if t has been processed completely
 					if(i == t.length() - 1) {
 						return 1;
 					} else {

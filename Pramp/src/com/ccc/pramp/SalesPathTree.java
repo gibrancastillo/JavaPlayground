@@ -28,7 +28,7 @@ class SalesPathTree {
 			
 			// rootNode
 			for(Node n : rootNode.children) {
-				int tempCost += getCheapestCost(n);
+				int tempCost = getCheapestCost(n);
 				
 				if(tempCost < minCost)
 					minCost = tempCost;

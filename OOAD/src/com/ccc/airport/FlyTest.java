@@ -55,5 +55,6 @@ public class FlyTest {
 		}
 		
 		System.out.println("biplane speed: " + biplane.getSpeed());
+		System.out.println("boeing speed: " + boeing.getSpeed());
 	}
 }
